@@ -1,3 +1,4 @@
+// import '@/lib-components/styles/tailwind.css'
 import '@/lib-components/styles/index.scss'
 
 // Import vue components

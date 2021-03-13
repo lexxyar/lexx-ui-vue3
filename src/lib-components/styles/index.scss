@@ -1,1 +1,106 @@
 @import 'tailwind.css';
+
+@import "buttons";
+
+.sidebar-submenu {
+  .sidebar-item {
+    @apply text-gray-400;
+    .sidebar-item-caption {
+      @apply hidden;
+    }
+
+    &:hover {
+      @apply bg-transparent text-gray-700;
+    }
+
+    &.active {
+      @apply text-gray-700;
+    }
+  }
+}
+
+.lx-sidebar {
+  &.lx-sidebar-closed {
+    .sidebar-item, .sidebar-submenu .sidebar-item {
+
+      .sidebar-item-text {
+        @apply hidden;
+      }
+    }
+
+    .sidebar-submenu .sidebar-item {
+      .sidebar-item-caption {
+        @apply contents;
+      }
+    }
+  }
+}
+
+
+//.lx-dropdown-menu{}
+[area="menu-button"] {
+  [role="dropdown-menu"] {
+    @apply hidden;
+  }
+
+  &:focus-within [role="dropdown-menu"] {
+    @apply inline-block;
+  }
+}
+
+
+
+
+.lx-table-zebra{
+  thead tr, tbody tr:nth-child(2n){
+    @apply bg-gray-50;
+  }
+  tbody tr:nth-child(2n):hover{
+    @apply bg-gray-100;
+  }
+}
+
+
+
+
+
+
+.badge {
+  @apply inline-block rounded px-2 py-1 text-xs font-bold;
+
+  &.badge-primary {
+    @apply text-white bg-blue-500;
+  }
+
+  &.badge-secondary {
+    @apply text-white bg-gray-500;
+  }
+
+  &.badge-success {
+    @apply text-white bg-green-500;
+  }
+
+  &.badge-danger {
+    @apply text-white bg-red-500;
+  }
+
+  &.badge-warning {
+    @apply text-white bg-yellow-500 ;
+  }
+
+  &.badge-info {
+    @apply text-white bg-blue-300 ;
+  }
+
+  &.badge-indigo {
+    @apply text-white bg-indigo-500 ;
+  }
+
+  &.badge-dark {
+    @apply text-white bg-gray-700 ;
+  }
+
+  &.badge-light {
+    @apply text-gray-700 bg-gray-200 ;
+  }
+}
