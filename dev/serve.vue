@@ -16,13 +16,13 @@
         </template>
         Components
         <template #submenu>
-          <lx-sidebar-item route="/button-solid">Buttons</lx-sidebar-item>
-          <lx-sidebar-item route="/card-base">Cards</lx-sidebar-item>
-          <lx-sidebar-item route="/drop-down">Dropdown</lx-sidebar-item>
-          <lx-sidebar-item route="/table">Table</lx-sidebar-item>
-          <lx-sidebar-item route="/pagination">Pagination</lx-sidebar-item>
-          <lx-sidebar-item route="/basic-inputs">Inputs</lx-sidebar-item>
-          <lx-sidebar-item route="/badge">Badges</lx-sidebar-item>
+          <lx-sidebar-item to="/button-solid">Buttons</lx-sidebar-item>
+          <lx-sidebar-item to="/card-base">Cards</lx-sidebar-item>
+          <lx-sidebar-item to="/drop-down">Dropdown</lx-sidebar-item>
+          <lx-sidebar-item to="/table">Table</lx-sidebar-item>
+          <lx-sidebar-item to="/pagination">Pagination</lx-sidebar-item>
+          <lx-sidebar-item to="/basic-inputs">Inputs</lx-sidebar-item>
+          <lx-sidebar-item to="/badge">Badges</lx-sidebar-item>
         </template>
       </lx-sidebar-dd-item>
       <lx-sidebar-dd-item>

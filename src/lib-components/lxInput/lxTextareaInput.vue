@@ -4,11 +4,12 @@
       <label :for="uid" :class="labelClass">{{ label }}</label>
     </template>
     <div class="input-container">
+      <!--suppress HtmlFormInputWithoutLabel -->
       <textarea
           class="shadow-sm border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline"
-          @input="$emit('input', $event.target.value)"
+          @input="$emit('update:modelValue', $event.target.value)"
           :readonly="readonly"
-      >{{ value }}</textarea>
+      >{{ modelValue }}</textarea>
     </div>
   </div>
 </template>
@@ -20,8 +21,8 @@ import inputMixin from "@/lib-components/mixins/inputMixin";
 
 export default defineComponent({
   name: "lxTextareaInput",
-  props: {},
-  emits: ['input'],
+  props: {modelValue: String},
+  emits: ['update:modelValue'],
   data() {
     return ({})
   },

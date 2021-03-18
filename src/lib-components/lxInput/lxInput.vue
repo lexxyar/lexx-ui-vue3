@@ -3,8 +3,9 @@
     <template v-if="emptyLabel || label">
       <label :for="uid" class="text-md">{{ label }}</label>
     </template>
+    <!--suppress HtmlFormInputWithoutLabel -->
     <input :type="type" :id="uid" :placeholder="placeholder" :readonly="readonly"
-           @input="$emit('input', $event.target.value)" :value="value"
+           @input="$emit('update:modelValue', $event.target.value)" :value="modelValue"
            class="shadow-sm border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline">
   </div>
   <!--  <div class="input-group" :class="getCss()">-->
@@ -35,6 +36,7 @@ import inputMixin from "@/lib-components/mixins/inputMixin";
 export default defineComponent({
   name: "lxInput",
   props: {
+    modelValue: String,
     type: {
       type: String,
       default: 'text',
@@ -46,7 +48,7 @@ export default defineComponent({
   data() {
     return ({})
   },
-  emits: ['input'],
+  emits: ['update:value'],
   computed: {},
   methods: {},
   mixins: [inputMixin]

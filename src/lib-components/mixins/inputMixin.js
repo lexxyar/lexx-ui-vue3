@@ -52,7 +52,6 @@ const inputMixin = {
             }
             return val.join(' ')
         },
-
     }
 }
 

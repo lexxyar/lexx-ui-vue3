@@ -2,7 +2,8 @@
   <div class="flex flex-wrap">
     <lx-card class="w-112 mr-5 mb-5">
       <template #header>Control types</template>
-      <lx-input class="mb-1" placeholder="Search text..."></lx-input>
+      <span>Text is:{{text}}</span>
+      <lx-input class="mb-1" placeholder="Search text..." v-model="text"></lx-input>
       <lx-select-input class="mb-1" :options="options"></lx-select-input>
       <lx-select-input class="mb-1" :options="options" :multiple="true"></lx-select-input>
       <lx-textarea-input></lx-textarea-input>
@@ -61,6 +62,7 @@ export default {
 
   data() {
     return ({
+      text: '',
       options: [
         {value: 1, title: 'JavaScript'},
         {value: 2, title: 'C++'},
