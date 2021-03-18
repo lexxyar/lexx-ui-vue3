@@ -1,6 +1,6 @@
 <template>
-  <template v-if="$router && !!route">
-    <router-link :to="route"
+  <template v-if="$router && !!to">
+    <router-link :to="to"
                  class="flex items-center p-2 text-gray-500 transition-colors rounded-md dark:text-light hover:bg-indigo-100 dark:hover:bg-indigo-600 sidebar-item"
     >
       <span v-if="hasSvgSlot()"
@@ -55,7 +55,7 @@ export default defineComponent({
       type: String,
       default: ''
     },
-    route: {
+    to: {
       type: String,
       default: ''
     }

@@ -4,7 +4,7 @@
       <label :for="uid" class="text-md">{{ label }}</label>
     </template>
     <input :type="type" :id="uid" :placeholder="placeholder" :readonly="readonly"
-           @input="$emit('input', $event.target.value)"
+           @input="$emit('input', $event.target.value)" :value="value"
            class="shadow-sm border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline">
   </div>
   <!--  <div class="input-group" :class="getCss()">-->
@@ -39,7 +39,7 @@ export default defineComponent({
       type: String,
       default: 'text',
       validator: (value) => {
-        return ['text', 'number', 'email', 'phone'].indexOf(value) !== -1
+        return ['text', 'number', 'email', 'phone', 'password'].indexOf(value) !== -1
       },
     },
   },

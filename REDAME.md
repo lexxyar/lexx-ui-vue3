@@ -1,6 +1,8 @@
 #Version changes
+## 0.0.3
+* lxNavbarItem fixed for routes
 ## 0.0.2
-* Added tabless
+* Added tables
 * Added badges
 * Added dropdown menu
 * Added inputs
