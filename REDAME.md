@@ -1,4 +1,7 @@
 #Version changes
+## 0.0.6
+* Inputs v-model bugfix
+- Multiselect v-model bug contained
 ## 0.0.5
 * Input :value reactive bugfix
 ## 0.0.4

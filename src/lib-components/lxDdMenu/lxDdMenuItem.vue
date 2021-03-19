@@ -1,11 +1,13 @@
 <template>
-  <template v-if="!!$router && route">
-    <router-link class="block px-4 py-2 text-sm text-left capitalize text-gray-700 hover:bg-blue-500 hover:text-white">
+  <template v-if="!!$router && to">
+    <router-link class="block px-4 py-2 text-sm text-left capitalize text-gray-700 hover:bg-blue-500 hover:text-white"
+                 :to="to">
       <slot></slot>
     </router-link>
   </template>
   <template v-else>
-    <a :href="link" class="block px-4 py-2 text-sm text-left capitalize text-gray-700 hover:bg-blue-500 hover:text-white">
+    <a :href="href"
+       class="block px-4 py-2 text-sm text-left capitalize text-gray-700 hover:bg-blue-500 hover:text-white">
       <slot></slot>
     </a>
   </template>
@@ -17,10 +19,10 @@ import {defineComponent} from "vue"
 export default defineComponent({
   name: "lxDdMenuItem",
   props: {
-    route: {
+    to: {
       type: String
     },
-    link: {
+    href: {
       type: String,
       default: ''
     }

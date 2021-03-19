@@ -21,7 +21,7 @@
   </template>
   <template v-else>
     <a
-        :href="link"
+        :href="href"
         class="flex items-center p-2 text-gray-500 transition-colors rounded-md dark:text-light hover:bg-indigo-100 dark:hover:bg-indigo-600 sidebar-item"
         :class="{ 'text-gray-600 bg-gray-100 active':active }"
     >
@@ -51,7 +51,7 @@ export default defineComponent({
   name: "lxSidebarItem",
   mixins: [navigationMixin],
   props: {
-    link: {
+    href: {
       type: String,
       default: ''
     },

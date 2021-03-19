@@ -7,7 +7,7 @@
     </router-link>
   </template>
   <template v-else>
-    <a :href="link"
+    <a :href="href"
        class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal no-underline flex items-center hover:bg-gray-200">
       <slot></slot>
     </a>
@@ -20,7 +20,7 @@ import {defineComponent} from "vue"
 export default defineComponent({
   name: "lxNavbarItem",
   props: {
-    link: {
+    href: {
       type: String,
       default: ''
     },
