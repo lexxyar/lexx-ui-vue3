@@ -6,30 +6,13 @@
            class="cursor-pointer relative block opacity-0 w-full h-full p-20 z-50"
            :readonly="readonly"
            :disabled="readonly"
-           @input="$emit('input', $event.target.value)"
+           @input="$emit('update:modelValue', $event.target.value)" :value="modelValue"
     >
     <div class="text-center p-10 absolute top-0 right-0 left-0 m-auto"
          :class="{'text-gray-400':readonly}">
-      <h4>
-        Drop files anywhere to upload
-        <br/>or
-      </h4>
-      <p class="">Select Files</p>
+      {{ modelValue ? modelValue : label }}
     </div>
   </div>
-  <!--  <div class="input-group" :class="getCss()">-->
-  <!--    <template v-if="emptyLabel || label">-->
-  <!--      <label :for="uid" :class="labelClass">{{ label }}</label>-->
-  <!--    </template>-->
-  <!--    <div class="input-container">-->
-  <!--      <input type="file" :value="value" :id="uid"-->
-  <!--             class="form-control"-->
-  <!--             @input="$emit('input', $event.target.value)"-->
-  <!--             :readonly="readonly"-->
-  <!--             :placeholder="placeholder"-->
-  <!--      />-->
-  <!--    </div>-->
-  <!--  </div>-->
 </template>
 
 <script>
@@ -39,7 +22,10 @@ import {defineComponent} from "vue";
 
 export default defineComponent({
   name: "lxFileInput",
-  props: {},
+  props: {
+    modelValue: String,
+  },
+  emits: ['update:modelValue'],
   data() {
     return ({})
   },

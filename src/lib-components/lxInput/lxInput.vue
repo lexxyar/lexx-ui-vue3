@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col pt-4">
+  <div class="flex flex-col">
     <template v-if="emptyLabel || label">
       <label :for="uid" class="text-md">{{ label }}</label>
     </template>
@@ -48,7 +48,7 @@ export default defineComponent({
   data() {
     return ({})
   },
-  emits: ['update:value'],
+  emits: ['update:modelValue'],
   computed: {},
   methods: {},
   mixins: [inputMixin]
