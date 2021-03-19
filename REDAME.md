@@ -1,4 +1,6 @@
 #Version changes
+## 0.0.7
+* Convert buttons/links `route` to `to` for routes and `link` to `href` for links
 ## 0.0.6
 * Inputs v-model bugfix
 - Multiselect v-model bug contained
