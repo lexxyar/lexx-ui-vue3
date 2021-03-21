@@ -1,8 +1,9 @@
+<!--suppress HtmlFormInputWithoutLabel -->
 <template>
   <table class="border-collapse shadow-sm bg-white border-t-3 border-blue-400 lx-table-zebra w-full">
     <thead>
     <tr>
-      <th v-if="checkboxes" class="px-3 py-3 text-sm text-center">
+      <th v-if="checkboxes" class="px-3 py-3 text-sm text-left">
         <input type="checkbox" v-model="checkAll"/>
       </th>
       <th v-for="h in header" class="px-3 py-3 text-sm text-left">{{ h.title }}</th>
