@@ -83,7 +83,7 @@
   }
 
   &.btn-flat {
-    @apply bg-white;
+    @apply bg-transparent;
 
     &.btn-primary {
       @apply text-blue-600 hover:bg-blue-100;

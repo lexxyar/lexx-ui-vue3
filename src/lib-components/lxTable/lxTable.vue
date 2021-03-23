@@ -3,10 +3,10 @@
   <table class="border-collapse shadow-sm bg-white border-t-3 border-blue-400 lx-table-zebra w-full">
     <thead>
     <tr>
-      <th v-if="checkboxes" class="px-3 py-3 text-sm text-left">
+      <th v-if="checkboxes" class="px-3 py-3 text-sm text-left w-3">
         <input type="checkbox" v-model="checkAll"/>
       </th>
-      <th v-for="h in header" class="px-3 py-3 text-sm text-left">{{ h.title }}</th>
+      <th v-for="h in header" class="px-3 py-3 text-sm text-left" :class="h.css">{{ h.title }}</th>
     </tr>
     </thead>
     <tfoot></tfoot>
@@ -57,9 +57,7 @@ export default {
       this.data.map(itm => itm.checked = val)
     },
   },
-  methods: {
-
-  }
+  methods: {}
 }
 </script>
 

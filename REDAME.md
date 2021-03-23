@@ -1,4 +1,11 @@
 #Version changes
+## 0.0.9
+* lxTable added `css` field into header to bind with `class` attribute
+* lxPageTitle bugfix
+* flat button bg fix
+* lxButton can accept `to` router path
+## 0.0.8
+* Added lxPageTitle
 ## 0.0.7
 * Convert buttons/links `route` to `to` for routes and `link` to `href` for links
 ## 0.0.6

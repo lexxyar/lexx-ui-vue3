@@ -1,7 +1,14 @@
 <template>
-  <button class="btn" :class="getCss()" :disabled="disabled" >
-    <slot/>
-  </button>
+  <template v-if="$router && !!to">
+    <router-link :to="to" class="btn" :class="getCss()" :disabled="disabled">
+      <slot></slot>
+    </router-link>
+  </template>
+  <template v-else>
+    <button class="btn" :class="getCss()" :disabled="disabled">
+      <slot/>
+    </button>
+  </template>
 </template>
 
 <script>
@@ -39,10 +46,14 @@ export default defineComponent({
     size: {
       type: String,
       validator: (value) => {
-        return ['', 'md','lg', 'sm'].indexOf(value) !== -1
+        return ['', 'md', 'lg', 'sm'].indexOf(value) !== -1
       },
       default: '',
     },
+    to: {
+      type: String,
+      default: ''
+    }
   },
   methods: {
     getCss() {
