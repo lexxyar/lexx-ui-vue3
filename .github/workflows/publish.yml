@@ -1,0 +1,24 @@
+name: "publish"
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  release:
+    name: "publish"
+    runs-on: "windows"
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2.1.1
+      - name: node
+        uses: actions/setup-node@v1.4.2
+        with:
+          node-version: 12
+          registry-url: http://registry.npmjs.org
+      - name: publish
+        run: npm run build && npm publish --access public
+#        working-directory: lexx-ui-vue3
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
