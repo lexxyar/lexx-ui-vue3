@@ -419,17 +419,16 @@ var script$d = defineComponent({
   },
   emits: ['toggleSidebar'],
   watch: {
-    isSidebarOpen(val, old) {
-      // console.log(val)
+    isSidebarOpen(val) {
       this.$emit('toggleSidebar', val);
     }
 
   }
 });
 
-const _withId$d = /*#__PURE__*/withScopeId("data-v-484417e3");
+const _withId$d = /*#__PURE__*/withScopeId("data-v-01779e05");
 
-pushScopeId("data-v-484417e3");
+pushScopeId("data-v-01779e05");
 
 const _hoisted_1$9 = {
   class: "flex-shrink-0 border-b bg-white"
@@ -474,7 +473,7 @@ const render$d = /*#__PURE__*/_withId$d((_ctx, _cache, $props, $setup, $data, $o
 });
 
 script$d.render = render$d;
-script$d.__scopeId = "data-v-484417e3";
+script$d.__scopeId = "data-v-01779e05";
 
 var script$c = defineComponent({
   name: "lxNavbarItem",
@@ -908,9 +907,9 @@ var script$6 = defineComponent({
   mixins: [inputMixin]
 });
 
-const _withId$6 = /*#__PURE__*/withScopeId("data-v-2d28eee2");
+const _withId$6 = /*#__PURE__*/withScopeId("data-v-a0d9e3c4");
 
-pushScopeId("data-v-2d28eee2");
+pushScopeId("data-v-a0d9e3c4");
 
 const _hoisted_1$5 = {
   class: "flex flex-col"
@@ -949,15 +948,15 @@ const render$6 = /*#__PURE__*/_withId$6((_ctx, _cache, $props, $setup, $data, $o
 });
 
 script$6.render = render$6;
-script$6.__scopeId = "data-v-2d28eee2";
+script$6.__scopeId = "data-v-a0d9e3c4";
 
 var script$5 = defineComponent({
   name: "lxSelectInputCheckmark"
 });
 
-const _withId$5 = /*#__PURE__*/withScopeId("data-v-42eac69d");
+const _withId$5 = /*#__PURE__*/withScopeId("data-v-31471600");
 
-pushScopeId("data-v-42eac69d");
+pushScopeId("data-v-31471600");
 
 const _hoisted_1$4 = {
   class: "absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600"
@@ -965,11 +964,9 @@ const _hoisted_1$4 = {
 
 const _hoisted_2$3 = /*#__PURE__*/createVNode("svg", {
   class: "h-5 w-5",
-  "x-description": "Heroicon name: solid/check",
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 20 20",
-  fill: "currentColor",
-  "aria-hidden": "true"
+  fill: "currentColor"
 }, [/*#__PURE__*/createVNode("path", {
   "fill-rule": "evenodd",
   d: "M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z",
@@ -983,7 +980,7 @@ const render$5 = /*#__PURE__*/_withId$5((_ctx, _cache, $props, $setup, $data, $o
 });
 
 script$5.render = render$5;
-script$5.__scopeId = "data-v-42eac69d";
+script$5.__scopeId = "data-v-31471600";
 
 var script$4 = defineComponent({
   name: "lxSelectInput",
@@ -1024,12 +1021,12 @@ var script$4 = defineComponent({
 
   computed: {
     selectedOption() {
-      return this.options.find(i => i[this.optionValueField] == this.modelValue);
+      return this.options.find(i => +i[this.optionValueField] === +this.modelValue);
     }
 
   },
   methods: {
-    onClickAway(e) {
+    onClickAway() {
       this.open = false;
     },
 
@@ -1045,14 +1042,22 @@ var script$4 = defineComponent({
       // console.log(e)
       this.$emit('update:modelValue', `${e}`);
       this.open = false;
+    },
+
+    getValue(opt) {
+      if (!opt) {
+        return '';
+      }
+
+      return opt[this.optionTitleField];
     }
 
   }
 });
 
-const _withId$4 = /*#__PURE__*/withScopeId("data-v-e8468302");
+const _withId$4 = /*#__PURE__*/withScopeId("data-v-cc9be9fa");
 
-pushScopeId("data-v-e8468302");
+pushScopeId("data-v-cc9be9fa");
 
 const _hoisted_1$3 = {
   class: "mt-1 relative"
@@ -1067,8 +1072,7 @@ const _hoisted_3$2 = /*#__PURE__*/createVNode("span", {
   class: "h-5 w-5 text-gray-400",
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 20 20",
-  fill: "currentColor",
-  "aria-hidden": "true"
+  fill: "currentColor"
 }, [/*#__PURE__*/createVNode("path", {
   "fill-rule": "evenodd",
   d: "M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z",
@@ -1102,7 +1106,7 @@ const render$4 = /*#__PURE__*/_withId$4((_ctx, _cache, $props, $setup, $data, $o
     item: _ctx.selectedOption
   }) : (openBlock(), createBlock(Fragment, {
     key: 1
-  }, [createTextVNode(toDisplayString(_ctx.selectedOption[_ctx.optionTitleField]), 1)], 64))]), _hoisted_3$2]), withDirectives(createVNode("ul", {
+  }, [createTextVNode(toDisplayString(_ctx.getValue(_ctx.selectedOption)), 1)], 64))]), _hoisted_3$2]), withDirectives(createVNode("ul", {
     class: "z-40 absolute mt-1 w-full bg-white shadow-lg max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm",
     onKeydown: [_cache[2] || (_cache[2] = withKeys(withModifiers($event => _ctx.onOptionSelect(), ["stop", "prevent"]), ["enter"])), _cache[3] || (_cache[3] = withKeys(withModifiers($event => _ctx.onOptionSelect(), ["stop", "prevent"]), ["space"])), _cache[4] || (_cache[4] = withKeys($event => _ctx.onEscape(), ["escape"])), _cache[5] || (_cache[5] = withKeys(withModifiers($event => _ctx.onArrowUp(), ["prevent"]), ["arrow-up"])), _cache[6] || (_cache[6] = withKeys(withModifiers($event => _ctx.onArrowDown(), ["prevent"]), ["arrow-down"]))],
     tabindex: "-1",
@@ -1117,7 +1121,7 @@ const render$4 = /*#__PURE__*/_withId$4((_ctx, _cache, $props, $setup, $data, $o
       item: opt
     }) : (openBlock(), createBlock(Fragment, {
       key: 1
-    }, [createTextVNode(toDisplayString(opt[_ctx.optionTitleField]), 1)], 64))]), opt[_ctx.optionValueField] == _ctx.modelValue ? (openBlock(), createBlock(_component_lx_select_input_checkmark, {
+    }, [createTextVNode(toDisplayString(_ctx.getValue(opt)), 1)], 64))]), +opt[_ctx.optionValueField] === +_ctx.modelValue ? (openBlock(), createBlock(_component_lx_select_input_checkmark, {
       key: 0,
       class: ""
     })) : createCommentVNode("", true)], 8, ["onClick"]);
@@ -1125,7 +1129,7 @@ const render$4 = /*#__PURE__*/_withId$4((_ctx, _cache, $props, $setup, $data, $o
 });
 
 script$4.render = render$4;
-script$4.__scopeId = "data-v-e8468302";
+script$4.__scopeId = "data-v-cc9be9fa";
 
 var script$3 = defineComponent({
   name: "lxFileInput",

@@ -49,10 +49,11 @@
 <script>
 import {defineComponent} from "vue"
 import inputMixin from "../mixins/inputMixin";
-// import inputMixin from "@/lib-components/mixins/inputMixin";
 
 export default defineComponent({
   name: "lxInput",
+  emits: ['update:modelValue'],
+  mixins: [inputMixin],
   props: {
     modelValue: String,
     type: {
@@ -66,7 +67,6 @@ export default defineComponent({
   data() {
     return ({})
   },
-  emits: ['update:modelValue'],
   computed: {
     colcount() {
       if (this.hasAppend && this.hasPrepend) {
@@ -79,7 +79,7 @@ export default defineComponent({
     }
   },
   methods: {},
-  mixins: [inputMixin]
+
 })
 </script>
 

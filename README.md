@@ -1,4 +1,7 @@
-#Version changes
+# Version changes
+## 
+* lxCheckbox
+* lxToggle
 ## 0.0.10
 * textarea style modified
 * fileinput restyling

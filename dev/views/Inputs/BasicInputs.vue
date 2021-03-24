@@ -3,15 +3,20 @@
   <div class="flex flex-wrap">
     <lx-card class="w-112 mr-5 mb-5">
       <template #header>Control types</template>
+      <span>{{ checkboxState }}</span>
+      <lx-checkbox label="check me" v-model="checkboxState"/>
+
+      <lx-toggle label="Toggle me" v-model="checkboxState"/>
+
       <span>Text: {{ text }}</span>
       <lx-input class="mb-1" placeholder="Search text..." v-model="text"></lx-input>
       <span>Single: {{ selected1 }}</span>
       <lx-select-input class="mb-1" :options="options" v-model="selected1" optionValueField="value">
         <template #item="{item}">
           <img
-              :src="item.img"
-              alt=""
-              class="flex-shrink-0 h-6 w-6 rounded-full">
+            :src="item.img"
+            alt=""
+            class="flex-shrink-0 h-6 w-6 rounded-full">
           <span class="ml-3 block truncate font-semibold"
                 :class="{ 'font-semibold': item.value === selected1, 'font-normal': !(item.value === selected1) }">
                             {{ item.title }}
@@ -73,11 +78,14 @@
 </template>
 
 <script>
+import LxCheckbox from "@/lib-components/lxInput/lxCheckbox";
+
 export default {
   name: "BasicInputs",
-
+  components: {LxCheckbox},
   data() {
     return ({
+      checkboxState: false,
       text: '',
       selected1: '2',
       // selected:[],
