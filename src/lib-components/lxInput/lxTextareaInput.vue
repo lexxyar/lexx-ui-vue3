@@ -4,9 +4,10 @@
       <label :for="uid" :class="labelClass">{{ label }}</label>
     </template>
     <div class="input-container">
+<!--      class="shadow-sm border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline"-->
       <!--suppress HtmlFormInputWithoutLabel -->
       <textarea
-          class="shadow-sm border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline"
+          class="shadow-sm focus:outline-none focus:shadow-outline py-2 px-3 mt-1 block w-full sm:text-sm border rounded-md text-gray-700"
           @input="$emit('update:modelValue', $event.target.value)"
           :readonly="readonly"
       >{{ modelValue }}</textarea>

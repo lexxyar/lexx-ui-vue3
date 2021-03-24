@@ -3,7 +3,7 @@
   <div id="app" class="flex h-screen overflow-y-hidden bg-white">
 
     <!--suppress HtmlUnknownTag -->
-    <lxSidebar :open="open">
+    <lxSidebar :open="open" @toggle="toggleSidebar">
       <template #brand>
         <span :class="{'lg:justify-center': !open}">L</span><span :class="{'hidden': !open}">ara</span>
       </template>
@@ -39,6 +39,7 @@
         Inputs
         <template #submenu>
           <lx-sidebar-item to="/basic-inputs">Basic</lx-sidebar-item>
+          <lx-sidebar-item to="/group-inputs">Input groups</lx-sidebar-item>
         </template>
       </lx-sidebar-dd-item>
       <lx-sidebar-dd-item>

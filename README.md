@@ -1,4 +1,13 @@
 #Version changes
+## 0.0.10
+* textarea style modified
+* fileinput restyling
+* input `append` and `prepend` slots added
+* vue3-click-away dependency
+* rollup.config.js `sourcemap` added
+* select dropdown completely changed
+* lxSidebar @media bug fix
+* Toggle sidebar from navbar bug fix
 ## 0.0.9
 * lxTable added `css` field into header to bind with `class` attribute
 * lxPageTitle bugfix

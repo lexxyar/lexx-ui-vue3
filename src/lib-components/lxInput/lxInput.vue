@@ -3,10 +3,27 @@
     <template v-if="emptyLabel || label">
       <label :for="uid" class="text-md">{{ label }}</label>
     </template>
-    <!--suppress HtmlFormInputWithoutLabel -->
-    <input :type="type" :id="uid" :placeholder="placeholder" :readonly="readonly"
-           @input="$emit('update:modelValue', $event.target.value)" :value="modelValue"
-           class="shadow-sm border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline">
+
+    <div class="input-container flex">
+
+      <div
+          class="shadow-sm border rounded rounded-r-none border-r-0 flex-none py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline input-extention prepend"
+          v-if="hasPrepend">
+        <slot name="prepend"></slot>
+      </div>
+      <!--suppress HtmlFormInputWithoutLabel -->
+      <input :type="type" :id="uid" :placeholder="placeholder" :readonly="readonly"
+             @input="$emit('update:modelValue', $event.target.value)" :value="modelValue"
+             class="shadow-sm border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline"
+             :class="{'rounded-l-none':hasPrepend, 'rounded-r-none':hasAppend}"
+      />
+      <div
+          class="shadow-sm border rounded rounded-l-none border-l-0 flex-none py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline input-extention append"
+          v-if="hasAppend">
+        <slot name="append"></slot>
+      </div>
+    </div>
+
   </div>
   <!--  <div class="input-group" :class="getCss()">-->
   <!--    <template v-if="emptyLabel || label">-->
@@ -31,7 +48,8 @@
 
 <script>
 import {defineComponent} from "vue"
-import inputMixin from "@/lib-components/mixins/inputMixin";
+import inputMixin from "../mixins/inputMixin";
+// import inputMixin from "@/lib-components/mixins/inputMixin";
 
 export default defineComponent({
   name: "lxInput",
@@ -49,7 +67,17 @@ export default defineComponent({
     return ({})
   },
   emits: ['update:modelValue'],
-  computed: {},
+  computed: {
+    colcount() {
+      if (this.hasAppend && this.hasPrepend) {
+        return 3
+      }
+      if (this.hasAppend || this.hasPrepend) {
+        return 2
+      }
+      return 1
+    }
+  },
   methods: {},
   mixins: [inputMixin]
 })

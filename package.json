@@ -20,7 +20,10 @@
     "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
-    "pub": "npm run build && npm publish"
+    "pub": "npm run build && npm publish",
+    "patch": "npm version patch",
+    "minor": "npm version minot",
+    "major": "npm version release"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -56,5 +59,8 @@
   },
   "engines": {
     "node": ">=12"
+  },
+  "dependencies": {
+    "vue3-click-away": "^1.1.0"
   }
 }

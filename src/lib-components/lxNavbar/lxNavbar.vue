@@ -5,7 +5,7 @@
       <div class="flex items-center space-x-3">
 
         <!-- Toggle sidebar button -->
-        <button @click="isSidebarOpen = !isSidebarOpen" class="p-2 rounded-md focus:outline-none focus:ring">
+        <button @click="onToggleSidebar" class="p-2 rounded-md focus:outline-none focus:ring">
           <svg
               class="w-4 h-4 text-gray-600"
               :class="{'transform transition-transform -rotate-180': isSidebarOpen}"
@@ -54,12 +54,15 @@ export default defineComponent({
   methods: {
     hasBrandSlot() {
       return this.$slots.brand
+    },
+    onToggleSidebar() {
+      // isSidebarOpen = !isSidebarOpen
+      this.$emit('toggleSidebar', !this.isSidebarOpen)
     }
   },
   emits: ['toggleSidebar'],
   watch: {
-    isSidebarOpen(val, old) {
-      // console.log(val)
+    isSidebarOpen(val) {
       this.$emit('toggleSidebar', val)
     }
   }
