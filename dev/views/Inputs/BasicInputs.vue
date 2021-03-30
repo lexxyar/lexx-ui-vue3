@@ -3,13 +3,12 @@
   <div class="flex flex-wrap">
     <lx-card class="w-112 mr-5 mb-5">
       <template #header>Control types</template>
-      <span>{{ checkboxState }}</span>
-      <lx-checkbox label="check me" v-model="checkboxState"/>
-
-      <lx-toggle label="Toggle me" v-model="checkboxState"/>
 
       <span>Text: {{ text }}</span>
-      <lx-input class="mb-1" placeholder="Search text..." v-model="text"></lx-input>
+      <lx-input class="mb-1" placeholder="Search text..." v-model="text"
+                @input="onChange"
+                :commit-timout="1000"
+      ></lx-input>
       <span>Single: {{ selected1 }}</span>
       <lx-select-input class="mb-1" :options="options" v-model="selected1" optionValueField="value">
         <template #item="{item}">
@@ -38,6 +37,13 @@
       <lx-select-input class="mb-1" :options="options" :multiple="true" label="Multiselect"></lx-select-input>
       <lx-textarea-input label="Textarea"></lx-textarea-input>
       <lx-file-input label="File selection"></lx-file-input>
+    </lx-card>
+
+    <lx-card class="w-112 mr-5 mb-5">
+      <template #header>Radios & checkboxes</template>
+      <lx-checkbox label="check me" v-model="checkboxState"/>
+
+      <lx-toggle label="Toggle me" v-model="checkboxState"/>
     </lx-card>
 
     <!--    <div class="row">-->
@@ -156,6 +162,11 @@ export default {
       ],
       rbChecked: 'go',
     })
+  },
+  methods:{
+    onChange(e){
+      console.log(e)
+    }
   },
   watch: {
     selected(val) {

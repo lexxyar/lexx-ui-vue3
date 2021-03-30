@@ -1,22 +1,7 @@
 <!--suppress HtmlUnknownTag -->
 <template>
-  <!--  <label class="flex items-center relative cursor-pointer select-none">-->
-  <!--    <span class="text-lg font-bold mr-3">{{ label }}</span>-->
-  <!--    <input type="checkbox"-->
-  <!--           class="appearance-none transition-colors cursor-pointer w-14 h-7 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-4 focus:ring-offset-gray-800 focus:ring-blue-500"-->
-  <!--           @change="$emit('update:modelValue', $event.target.checked)" :checked="!!modelValue"-->
-  <!--    />-->
-  <!--    <span class="absolute font-medium text-xs uppercase right-1">-->
-  <!--      {{ textFalse }}-->
-  <!--    </span>-->
-  <!--    <span class="absolute font-medium text-xs uppercase right-8">-->
-  <!--      {{ textTrue }}-->
-  <!--    </span>-->
-  <!--    <span class="w-7 h-7 absolute rounded-full transition-all bg-gray-200"/>-->
-  <!--  </label>-->
-
   <label :for="uid" class="flex items-center cursor-pointer">
-    <div class="px-2">{{ label }}</div>
+    <div class="pr-2">{{ label }}</div>
     <!-- toggle -->
     <div class="relative">
       <input :id="uid" type="checkbox" class="hidden"
@@ -62,7 +47,6 @@ input:checked ~ .toggle-circle {
 }
 
 input:checked ~ .toggle-path {
-  /*background-color: #81E6D9;*/
   @apply bg-blue-500;
 }
 </style>

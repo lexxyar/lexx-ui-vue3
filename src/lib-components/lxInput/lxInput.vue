@@ -7,19 +7,19 @@
     <div class="input-container flex">
 
       <div
-          class="shadow-sm border rounded rounded-r-none border-r-0 flex-none py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline input-extention prepend"
-          v-if="hasPrepend">
+        class="shadow-sm border rounded rounded-r-none border-r-0 flex-none py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline input-extention prepend"
+        v-if="hasPrepend">
         <slot name="prepend"></slot>
       </div>
       <!--suppress HtmlFormInputWithoutLabel -->
       <input :type="type" :id="uid" :placeholder="placeholder" :readonly="readonly"
-             @input="$emit('update:modelValue', $event.target.value)" :value="modelValue"
+             @input="onInput($event.target.value)" :value="modelValue"
              class="shadow-sm border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline"
              :class="{'rounded-l-none':hasPrepend, 'rounded-r-none':hasAppend}"
       />
       <div
-          class="shadow-sm border rounded rounded-l-none border-l-0 flex-none py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline input-extention append"
-          v-if="hasAppend">
+        class="shadow-sm border rounded rounded-l-none border-l-0 flex-none py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline input-extention append"
+        v-if="hasAppend">
         <slot name="append"></slot>
       </div>
     </div>
@@ -52,7 +52,7 @@ import inputMixin from "../mixins/inputMixin";
 
 export default defineComponent({
   name: "lxInput",
-  emits: ['update:modelValue'],
+  emits: ['update:modelValue', 'input'],
   mixins: [inputMixin],
   props: {
     modelValue: String,
@@ -63,9 +63,15 @@ export default defineComponent({
         return ['text', 'number', 'email', 'phone', 'password'].indexOf(value) !== -1
       },
     },
+    commitTimout: {
+      type: Number,
+      default: 0
+    },
   },
   data() {
-    return ({})
+    return ({
+      timer: null,
+    })
   },
   computed: {
     colcount() {
@@ -76,10 +82,24 @@ export default defineComponent({
         return 2
       }
       return 1
+    },
+
+  },
+  methods: {
+    onInput(e) {
+      if (+this.commitTimout > 0) {
+        if (!!this.timer)
+          clearTimeout(this.timer)
+        this.timer = setTimeout(function () {
+          this.$emit('input', e)
+        }.bind(this), this.commitTimout)
+      } else {
+        this.$emit('input', e)
+      }
+      this.$emit('update:modelValue', e)
+
     }
   },
-  methods: {},
-
 })
 </script>
 
