@@ -849,7 +849,7 @@ script$9.__scopeId = "data-v-2613a76e";var inputMixin = {
   }
 };var script$8 = vue.defineComponent({
   name: "lxInput",
-  emits: ['update:modelValue'],
+  emits: ['update:modelValue', 'input'],
   mixins: [inputMixin],
   props: {
     modelValue: String,
@@ -859,10 +859,16 @@ script$9.__scopeId = "data-v-2613a76e";var inputMixin = {
       validator: function validator(value) {
         return ['text', 'number', 'email', 'phone', 'password'].indexOf(value) !== -1;
       }
+    },
+    commitTimout: {
+      type: Number,
+      default: 0
     }
   },
   data: function data() {
-    return {};
+    return {
+      timer: null
+    };
   },
   computed: {
     colcount: function colcount() {
@@ -877,10 +883,23 @@ script$9.__scopeId = "data-v-2613a76e";var inputMixin = {
       return 1;
     }
   },
-  methods: {}
-});var _withId$8 = /*#__PURE__*/vue.withScopeId("data-v-5a1d5002");
+  methods: {
+    onInput: function onInput(e) {
+      if (+this.commitTimout > 0) {
+        if (!!this.timer) clearTimeout(this.timer);
+        this.timer = setTimeout(function () {
+          this.$emit('input', e);
+        }.bind(this), this.commitTimout);
+      } else {
+        this.$emit('input', e);
+      }
 
-vue.pushScopeId("data-v-5a1d5002");
+      this.$emit('update:modelValue', e);
+    }
+  }
+});var _withId$8 = /*#__PURE__*/vue.withScopeId("data-v-87c67114");
+
+vue.pushScopeId("data-v-87c67114");
 
 var _hoisted_1$7 = {
   class: "flex flex-col"
@@ -910,7 +929,7 @@ var render$8 = /*#__PURE__*/_withId$8(function (_ctx, _cache, $props, $setup, $d
     placeholder: _ctx.placeholder,
     readonly: _ctx.readonly,
     onInput: _cache[1] || (_cache[1] = function ($event) {
-      return _ctx.$emit('update:modelValue', $event.target.value);
+      return _ctx.onInput($event.target.value);
     }),
     value: _ctx.modelValue,
     class: ["shadow-sm border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline", {
@@ -919,7 +938,7 @@ var render$8 = /*#__PURE__*/_withId$8(function (_ctx, _cache, $props, $setup, $d
     }]
   }, null, 42, ["type", "id", "placeholder", "readonly", "value"]), _ctx.hasAppend ? (vue.openBlock(), vue.createBlock("div", _hoisted_4$4, [vue.renderSlot(_ctx.$slots, "append")])) : vue.createCommentVNode("", true)])]);
 });script$8.render = render$8;
-script$8.__scopeId = "data-v-5a1d5002";var script$7 = vue.defineComponent({
+script$8.__scopeId = "data-v-87c67114";var script$7 = vue.defineComponent({
   name: "lxSelectInputCheckmark"
 });var _withId$7 = /*#__PURE__*/vue.withScopeId("data-v-31471600");
 
@@ -1302,12 +1321,12 @@ script$1.__scopeId = "data-v-879d666e";var script = vue.defineComponent({
       default: 'OFF'
     }
   }
-});var _withId = /*#__PURE__*/vue.withScopeId("data-v-aea8779c");
+});var _withId = /*#__PURE__*/vue.withScopeId("data-v-4ab89c18");
 
-vue.pushScopeId("data-v-aea8779c");
+vue.pushScopeId("data-v-4ab89c18");
 
 var _hoisted_1 = {
-  class: "px-2"
+  class: "pr-2"
 };
 var _hoisted_2 = {
   class: "relative"
@@ -1343,7 +1362,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     checked: !!_ctx.modelValue
   }, null, 40, ["id", "checked"]), vue.createVNode("span", _hoisted_3, vue.toDisplayString(_ctx.textFalse), 1), vue.createVNode("span", _hoisted_4, vue.toDisplayString(_ctx.textTrue), 1), _hoisted_5, _hoisted_6])], 8, ["for"]);
 });script.render = render;
-script.__scopeId = "data-v-aea8779c";/* eslint-disable import/prefer-default-export */var components$1=/*#__PURE__*/Object.freeze({__proto__:null,lxButton: script$k,lxCard: script$j,lxSidebar: script$i,lxSidebarItem: script$h,lxSidebarDdItem: script$g,lxNavbar: script$f,lxNavbarItem: script$e,lxNavbarButton: script$d,lxDdMenu: script$c,lxDdMenuItem: script$b,lxTable: script$a,lxPagination: script$9,lxInput: script$8,lxSelectInput: script$6,lxFileInput: script$5,lxTextareaInput: script$4,lxBadge: script$3,lxPageTitle: script$2,lxCheckbox: script$1,lxToggle: script});var install = function installLexxUiVue3(app) {
+script.__scopeId = "data-v-4ab89c18";/* eslint-disable import/prefer-default-export */var components$1=/*#__PURE__*/Object.freeze({__proto__:null,lxButton: script$k,lxCard: script$j,lxSidebar: script$i,lxSidebarItem: script$h,lxSidebarDdItem: script$g,lxNavbar: script$f,lxNavbarItem: script$e,lxNavbarButton: script$d,lxDdMenu: script$c,lxDdMenuItem: script$b,lxTable: script$a,lxPagination: script$9,lxInput: script$8,lxSelectInput: script$6,lxFileInput: script$5,lxTextareaInput: script$4,lxBadge: script$3,lxPageTitle: script$2,lxCheckbox: script$1,lxToggle: script});var install = function installLexxUiVue3(app) {
   Object.entries(components$1).forEach(function (_ref) {
     var _ref2 = _slicedToArray(_ref, 2),
         componentName = _ref2[0],

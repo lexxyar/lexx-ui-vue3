@@ -1,4 +1,7 @@
 # Version changes
+## 0.2.0
+* lxModal
+* lxSidebar bugfix
 ## 0.1.1
 * lxInput now has commitTimeout. Some time left after stop typing, component wil emit @input event 
 ## 0.1.0

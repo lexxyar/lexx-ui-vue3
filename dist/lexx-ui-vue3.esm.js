@@ -873,7 +873,7 @@ const inputMixin = {
 
 var script$8 = defineComponent({
   name: "lxInput",
-  emits: ['update:modelValue'],
+  emits: ['update:modelValue', 'input'],
   mixins: [inputMixin],
   props: {
     modelValue: String,
@@ -883,11 +883,17 @@ var script$8 = defineComponent({
       validator: value => {
         return ['text', 'number', 'email', 'phone', 'password'].indexOf(value) !== -1;
       }
+    },
+    commitTimout: {
+      type: Number,
+      default: 0
     }
   },
 
   data() {
-    return {};
+    return {
+      timer: null
+    };
   },
 
   computed: {
@@ -904,12 +910,26 @@ var script$8 = defineComponent({
     }
 
   },
-  methods: {}
+  methods: {
+    onInput(e) {
+      if (+this.commitTimout > 0) {
+        if (!!this.timer) clearTimeout(this.timer);
+        this.timer = setTimeout(function () {
+          this.$emit('input', e);
+        }.bind(this), this.commitTimout);
+      } else {
+        this.$emit('input', e);
+      }
+
+      this.$emit('update:modelValue', e);
+    }
+
+  }
 });
 
-const _withId$8 = /*#__PURE__*/withScopeId("data-v-5a1d5002");
+const _withId$8 = /*#__PURE__*/withScopeId("data-v-87c67114");
 
-pushScopeId("data-v-5a1d5002");
+pushScopeId("data-v-87c67114");
 
 const _hoisted_1$7 = {
   class: "flex flex-col"
@@ -938,7 +958,7 @@ const render$8 = /*#__PURE__*/_withId$8((_ctx, _cache, $props, $setup, $data, $o
     id: _ctx.uid,
     placeholder: _ctx.placeholder,
     readonly: _ctx.readonly,
-    onInput: _cache[1] || (_cache[1] = $event => _ctx.$emit('update:modelValue', $event.target.value)),
+    onInput: _cache[1] || (_cache[1] = $event => _ctx.onInput($event.target.value)),
     value: _ctx.modelValue,
     class: ["shadow-sm border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline", {
       'rounded-l-none': _ctx.hasPrepend,
@@ -948,7 +968,7 @@ const render$8 = /*#__PURE__*/_withId$8((_ctx, _cache, $props, $setup, $data, $o
 });
 
 script$8.render = render$8;
-script$8.__scopeId = "data-v-5a1d5002";
+script$8.__scopeId = "data-v-87c67114";
 
 var script$7 = defineComponent({
   name: "lxSelectInputCheckmark"
@@ -1367,12 +1387,12 @@ var script = defineComponent({
   }
 });
 
-const _withId = /*#__PURE__*/withScopeId("data-v-aea8779c");
+const _withId = /*#__PURE__*/withScopeId("data-v-4ab89c18");
 
-pushScopeId("data-v-aea8779c");
+pushScopeId("data-v-4ab89c18");
 
 const _hoisted_1 = {
-  class: "px-2"
+  class: "pr-2"
 };
 const _hoisted_2 = {
   class: "relative"
@@ -1408,7 +1428,7 @@ const render = /*#__PURE__*/_withId((_ctx, _cache, $props, $setup, $data, $optio
 });
 
 script.render = render;
-script.__scopeId = "data-v-aea8779c";
+script.__scopeId = "data-v-4ab89c18";
 
 /* eslint-disable import/prefer-default-export */
 

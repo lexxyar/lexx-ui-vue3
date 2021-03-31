@@ -25,25 +25,6 @@
     </div>
 
   </div>
-  <!--  <div class="input-group" :class="getCss()">-->
-  <!--    <template v-if="emptyLabel || label">-->
-  <!--      <label :for="uid" :class="labelClass">{{ label }}</label>-->
-  <!--    </template>-->
-  <!--    <div class="input-container">-->
-  <!--      <div class="input-extention prepend" v-if="hasPrepend">-->
-  <!--        <slot name="prepend"></slot>-->
-  <!--      </div>-->
-  <!--      <input :type="type" :value="value" :id="uid" :class="hasAppend?'appended':''"-->
-  <!--             class="form-control"-->
-  <!--             @input="$emit('input', $event.target.value)"-->
-  <!--             :readonly="readonly"-->
-  <!--             :placeholder="placeholder"-->
-  <!--      />-->
-  <!--      <div class="input-extention append" v-if="hasAppend">-->
-  <!--        <slot name="append"></slot>-->
-  <!--      </div>-->
-  <!--    </div>-->
-  <!--  </div>-->
 </template>
 
 <script>

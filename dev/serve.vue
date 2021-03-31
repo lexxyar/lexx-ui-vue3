@@ -7,7 +7,8 @@
       <template #brand>
         <span :class="{'lg:justify-center': !open}">L</span><span :class="{'hidden': !open}">ara</span>
       </template>
-      <!--suppress HtmlUnknownTag -->
+
+      <!--        Buttons-->
       <lx-sidebar-dd-item>
         <template #svg>
           <svg focusable="false" data-prefix="fas" data-icon="power-off" role="img"
@@ -26,6 +27,9 @@
           <lx-sidebar-item to="/button-flat">Flat</lx-sidebar-item>
         </template>
       </lx-sidebar-dd-item>
+      <!--      /Buttons-->
+
+      <!--      Inputs-->
       <lx-sidebar-dd-item>
         <template #svg>
           <svg focusable="false" data-prefix="fas" data-icon="paragraph" role="img"
@@ -42,6 +46,9 @@
           <lx-sidebar-item to="/group-inputs">Input groups</lx-sidebar-item>
         </template>
       </lx-sidebar-dd-item>
+      <!--      /Inputs-->
+
+      <!--      Components-->
       <lx-sidebar-dd-item>
         <template #svg>
           <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -58,22 +65,26 @@
           <lx-sidebar-item to="/table">Table</lx-sidebar-item>
           <lx-sidebar-item to="/pagination">Pagination</lx-sidebar-item>
           <lx-sidebar-item to="/badge">Badges</lx-sidebar-item>
+          <lx-sidebar-item to="/modal">Modals</lx-sidebar-item>
         </template>
       </lx-sidebar-dd-item>
+      <!--      /Components-->
+
+      <!--      Pages-->
       <lx-sidebar-dd-item>
         <template #svg>
           <svg
-              class="w-5 h-5"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+            class="w-5 h-5"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
           >
             <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
             />
           </svg>
         </template>
@@ -85,6 +96,7 @@
           <lx-sidebar-item>Prices</lx-sidebar-item>
         </template>
       </lx-sidebar-dd-item>
+      <!--      /Pages-->
     </lxSidebar>
 
     <!--    <lexx-ui-vue3-sample />-->
