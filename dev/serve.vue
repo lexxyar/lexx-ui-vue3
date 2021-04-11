@@ -128,6 +128,7 @@ export default defineComponent({
   },
   methods: {
     toggleSidebar(e) {
+      console.log('serve','toggleSidebar', e)
       this.open = e
     }
   }

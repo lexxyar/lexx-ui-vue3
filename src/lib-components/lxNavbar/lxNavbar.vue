@@ -56,14 +56,19 @@ export default defineComponent({
       return this.$slots.brand
     },
     onToggleSidebar() {
-      // isSidebarOpen = !isSidebarOpen
+      // console.log('lxNavbar', 'toggleSidebar', !this.isSidebarOpen)
       this.$emit('toggleSidebar', !this.isSidebarOpen)
     }
   },
   emits: ['toggleSidebar'],
   watch: {
     isSidebarOpen(val) {
+      // console.log('lxNavbar', 'watch:isSidebarOpen', val)
       this.$emit('toggleSidebar', val)
+    },
+    sidebarOpen(val){
+      // console.log('lxNavbar', 'watch:sidebarOpen', val)
+      this.isSidebarOpen = val
     }
   }
 })

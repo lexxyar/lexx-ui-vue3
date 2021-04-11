@@ -1,4 +1,7 @@
 # Version changes
+## 0.2.1
+* lxSidebar expand item bugfix
+* lxSiebar + lxNavbar => sidebar toggle bug fix
 ## 0.2.0
 * lxModal
 * lxSidebar bugfix
