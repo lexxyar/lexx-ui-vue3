@@ -1,4 +1,6 @@
 # Version changes
+## 0.2.2
+* lxSidebarDdItem open on all item click
 ## 0.2.1
 * lxSidebar expand item bugfix
 * lxSiebar + lxNavbar => sidebar toggle bug fix

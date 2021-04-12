@@ -1,7 +1,7 @@
 <template>
   <a
     href="#"
-    @click="$event.preventDefault()"
+    @click="expanded = !expanded"
     class="flex items-center p-2 text-gray-500 transition-colors rounded-md dark:text-light hover:bg-indigo-100 dark:hover:bg-indigo-600"
     :class="{'text-gray-600 bg-gray-100':active}"
   >
@@ -17,8 +17,7 @@
           class="flex items-center justify-center text-sm text-gray-500 font-semibold bg-gray-200 h-6 px-2 rounded-full ml-auto">
     {{ count }}
     </span>
-    <span class="ml-auto" @click="expanded = !expanded">
-                <!-- active class 'rotate-180' -->
+    <span class="ml-auto">
       <svg
         class="w-4 h-4 transition-transform transform"
         :class="{ 'rotate-180': expanded }"
