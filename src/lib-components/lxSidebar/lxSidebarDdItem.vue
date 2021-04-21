@@ -35,23 +35,30 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import {defineComponent} from "vue"
-import navigationMixin from "@/lib-components/mixins/navigationMixin";
 
 export default defineComponent({
   name: "lxSidebarDdItem",
   props: {
-    // expanded: {
-    //   type: Boolean,
-    //   default: false
-    // }
+    active: {
+      type: Boolean,
+      default: false
+    },
+    count: {
+      type: Number,
+      default: 0
+    },
   },
-  mixins: [navigationMixin],
-  data(){
-    return({
+  data() {
+    return ({
       expanded: false,
     })
+  },
+  methods: {
+    hasSvgSlot() {
+      return !!this.$slots.svg
+    },
   }
 })
 </script>

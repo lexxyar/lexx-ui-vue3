@@ -15,27 +15,81 @@
     </span>
 
       <!-- path -->
-      <div class="toggle-path bg-gray-200 w-14 h-7 rounded-full shadow-inner transition bg-gray-200 duration-300 ease-in-out"></div>
+      <div
+        class="toggle-path bg-gray-200 w-14 h-7 rounded-full shadow-inner transition bg-gray-200 duration-300 ease-in-out"></div>
 
       <!-- crcle -->
-      <div class="toggle-circle absolute w-7 h-7 bg-gray-200 rounded-full shadow inset-y-0 left-0 transition-all duration-300 ease-in-out"></div>
+      <div
+        class="toggle-circle absolute w-7 h-7 bg-gray-200 rounded-full shadow inset-y-0 left-0 transition-all duration-300 ease-in-out"></div>
 
     </div>
   </label>
 </template>
 
-<script>
+<script lang="ts">
 import {defineComponent} from "vue"
-import inputMixin from "@/lib-components/mixins/inputMixin";
 
 export default defineComponent({
   name: "lxToggle",
   emits: ['update:modelValue'],
-  mixins: [inputMixin],
+  // mixins: [inputMixin],
   props: {
     modelValue: Boolean,
     textTrue: {type: String, default: 'ON'},
-    textFalse: {type: String, default: 'OFF'}
+    textFalse: {type: String, default: 'OFF'},
+    label: {type: String, default: ''},
+    emptyLabel: {type: Boolean, default: false},
+    readonly: {type: Boolean, default: false},
+    placeholder: {type: String, default: ''},
+    labelSize: {
+      type: String,
+      validator: (value: string) => {
+        return ['', 'sm', 'lg', 'xl'].indexOf(value) !== -1
+      },
+      default: ''
+    },
+    size: {
+      type: String,
+      validator: (value: string) => {
+        return ['', 'sm', 'lg'].indexOf(value) !== -1
+      },
+      default: ''
+    },
+  },
+  data() {
+    return ({
+      uid: this.genUid(),
+    })
+  },
+  methods: {
+    getCss(): string {
+      const css = []
+      css.push(this.readonly ? 'readonly' : '')
+      css.push(this.size ? `input-group-${this.size}` : '')
+      return css.join(' ')
+    },
+    genUid(): string {
+      return '_' + Math.random().toString(36).substr(2, 9);
+    }
+  },
+  computed: {
+    hasAppend(): boolean {
+      // @ts-ignore
+      return this.$slots['append']
+    },
+    hasPrepend(): boolean {
+      // @ts-ignore
+      return this.$slots['prepend']
+    },
+    labelClass() {
+      let val: string[] = [];
+      val.push(this.labelSize)
+
+      if (this.label) {
+        val.push('has-text')
+      }
+      return val.join(' ')
+    },
   },
 })
 </script>

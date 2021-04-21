@@ -1,4 +1,9 @@
 # Version changes
+## 0.3.0
+* Refactor to TypeScript
+* `console.log` clearing
+* lxSelectInput simple list without template bug fix
+* vue3-click-away dependencies gone
 ## 0.2.2
 * lxSidebarDdItem open on all item click
 ## 0.2.1

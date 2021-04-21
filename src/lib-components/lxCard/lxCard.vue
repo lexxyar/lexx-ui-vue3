@@ -22,7 +22,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import {defineComponent} from 'vue'
 
 export default defineComponent({
@@ -34,10 +34,10 @@ export default defineComponent({
     }
   },
   methods: {
-    hasHeaderSlot() {
+    hasHeaderSlot():boolean {
       return !!this.$slots.header
     },
-    hasFooterSlot() {
+    hasFooterSlot():boolean {
       return !!this.$slots.footer
     },
   }

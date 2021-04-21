@@ -141,9 +141,10 @@
   <!--  </div>-->
 </template>
 
-<script>
+<script lang="ts">
+import {defineComponent} from 'vue'
 
-export default {
+export default defineComponent({
   name: "GroupInputs",
   data() {
     return ({
@@ -160,7 +161,7 @@ export default {
       shSelected: '',
     })
   }
-}
+})
 </script>
 
 <style scoped>

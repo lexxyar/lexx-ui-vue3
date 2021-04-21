@@ -4,8 +4,10 @@
   <span>Curent page is {{ currentPage }}</span>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import {defineComponent} from 'vue'
+
+export default defineComponent({
   name: "Pagination",
   data() {
     return ({
@@ -14,11 +16,11 @@ export default {
     })
   },
   methods: {
-    onPageChange(e) {
+    onPageChange(e:any) {
       this.currentPage = e
     }
   }
-}
+})
 </script>
 
 <style scoped>

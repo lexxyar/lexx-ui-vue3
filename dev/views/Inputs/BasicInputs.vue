@@ -33,7 +33,14 @@
     <lx-card class="w-112 mr-5 mb-5">
       <template #header>Labeled</template>
       <lx-input class="mb-1" placeholder="Search text..." label="Search"></lx-input>
-      <lx-select-input class="mb-1" :options="options" label="Select"></lx-select-input>
+      <lx-select-input class="mb-1" :options="options" label="Select" v-model="selected2" optionValueField="value">
+<!--        <template #item="{item}">-->
+<!--          <span class="ml-3 block truncate font-semibold"-->
+<!--                :class="{ 'font-semibold': item.value === selected2, 'font-normal': !(item.value === selected2) }">-->
+<!--                            {{ item.title }}-->
+<!--                          </span>-->
+<!--        </template>-->
+      </lx-select-input>
       <lx-select-input class="mb-1" :options="options" :multiple="true" label="Multiselect"></lx-select-input>
       <lx-textarea-input label="Textarea"></lx-textarea-input>
       <lx-file-input label="File selection"></lx-file-input>
@@ -41,9 +48,10 @@
 
     <lx-card class="w-112 mr-5 mb-5">
       <template #header>Radios & checkboxes</template>
-      <lx-checkbox label="check me" v-model="checkboxState"/>
 
-      <lx-toggle label="Toggle me" v-model="checkboxState"/>
+      <lx-checkbox label="check me" value="checkbox" v-model="selectedCheckbox" />
+
+      <lx-toggle label="Toggle me" value="toggle" v-model="selectedCheckbox"/>
     </lx-card>
 
     <!--    <div class="row">-->
@@ -70,17 +78,18 @@
   </div>
 </template>
 
-<script>
-import LxCheckbox from "@/lib-components/lxInput/lxCheckbox";
+<script lang="ts">
+import {defineComponent} from 'vue'
 
-export default {
+export default defineComponent({
   name: "BasicInputs",
-  components: {LxCheckbox},
   data() {
     return ({
-      checkboxState: false,
+      selectedCheckbox:false,
+      // selectedCheckbox:[] as Array<string>,
       text: '',
       selected1: '2',
+      selected2: '4',
       // selected:[],
       textarea: 'Long text input',
       file: '',
@@ -151,16 +160,17 @@ export default {
     })
   },
   methods:{
-    onChange(e){
+    onChange(e:any){
       console.log(e)
+    },
+    onCheckboxClick(e:any){
+      console.log('onCheckboxClick', e)
     }
   },
   watch: {
-    selected(val) {
-      console.log(val)
-    }
+
   }
-}
+})
 </script>
 
 <style scoped>

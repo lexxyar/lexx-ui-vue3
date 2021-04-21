@@ -62,25 +62,22 @@
   </lx-sidebar>
 </template>
 
-<script>
-import LxSidebar from "@/lib-components/lxSidebar/lxSidebar";
-import LxSidebarDdItem from "@/lib-components/lxSidebar/lxSidebarDdItem";
+<script lang="ts">
+import {defineComponent} from 'vue'
 
-export default {
+export default defineComponent({
   name: "Sidebar",
-  components: {LxSidebarDdItem, LxSidebar},
   data() {
     return ({
       opened: true,
     })
   },
   methods:{
-    onToggle(e){
+    onToggle(e:any){
       this.opened = e;
-      // console.log(e)
     }
   }
-}
+})
 </script>
 
 <style scoped>

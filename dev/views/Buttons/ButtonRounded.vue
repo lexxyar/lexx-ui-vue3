@@ -2,13 +2,14 @@
   <ButtonLayout typ="rounded"/>
 </template>
 
-<script>
-import ButtonLayout from "../../components/ButtonLayout";
+<script lang="ts">
+import {defineComponent} from 'vue'
+import ButtonLayout from "../../components/ButtonLayout.vue";
 
-export default {
+export default defineComponent({
   name: "Rounded",
   components: {ButtonLayout}
-}
+})
 </script>
 
 <style scoped>

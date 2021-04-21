@@ -11,7 +11,7 @@
   </template>
 </template>
 
-<script>
+<script lang="ts">
 import {defineComponent} from 'vue';
 
 export default defineComponent({
@@ -19,14 +19,14 @@ export default defineComponent({
   props: {
     styl: {
       type: String,
-      validator: (value) => {
+      validator: (value: string) => {
         return ['primary', 'secondary', 'success', 'danger', 'info', 'warning', 'dark', 'light'].indexOf(value) !== -1
       },
       default: 'primary',
     },
     typ: {
       type: String,
-      validator: (value) => {
+      validator: (value: string) => {
         return ['', 'flat', 'rounded', 'pill'].indexOf(value) !== -1
       },
       default: '',
@@ -45,7 +45,7 @@ export default defineComponent({
     },
     size: {
       type: String,
-      validator: (value) => {
+      validator: (value: string) => {
         return ['', 'md', 'lg', 'sm'].indexOf(value) !== -1
       },
       default: '',

@@ -4,15 +4,15 @@
   </span>
 </template>
 
-<script>
+<script lang="ts">
 import {defineComponent} from "vue";
 
 export default defineComponent({
-name: "lxBadge",
-  props:{
+  name: "lxBadge",
+  props: {
     styl: {
       type: String,
-      validator: (value) => {
+      validator: (value: string) => {
         return ['primary', 'secondary', 'success', 'danger', 'info', 'warning', 'dark', 'light'].indexOf(value) !== -1
       },
       default: 'primary',

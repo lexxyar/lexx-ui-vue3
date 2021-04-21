@@ -10,7 +10,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import {defineComponent} from 'vue'
 import LxButton from "@/lib-components/lxButton/lxButton.vue";
 
@@ -24,37 +24,37 @@ export default defineComponent({
     prevButtonText: {type: String, default: 'Previous'},
     nextButtonText: {type: String, default: 'Next'},
   },
-  data() {
+  data():any {
     return ({
       currentPageSync: this.currentPage,
     })
   },
   methods: {
-    onPageClick(num) {
+    onPageClick(num:number) {
       this.currentPageSync = num
       this.$emit('pagechange', this.currentPageSync)
     },
-    onChangePage(dif) {
+    onChangePage(dif:number) {
       this.currentPageSync += dif
       this.currentPageSync = this.currentPageSync < 1 ? 1 : this.currentPageSync
       this.currentPageSync = this.currentPageSync > this.pageCount ? this.pageCount : this.currentPageSync
       this.$emit('pagechange', this.currentPageSync)
     },
-    canPrev() {
+    canPrev():boolean {
       return this.currentPageSync > 1
     },
-    canNext() {
+    canNext():boolean {
       return this.currentPageSync < this.pageCount
     }
   },
   computed: {
-    pageCount() {
+    pageCount():number {
       const res = Math.ceil(this.total / this.itemsPerPage)
       return res === 0 ? 1 : res
     }
   },
   watch: {
-    currentPage(newVal) {
+    currentPage(newVal:number) {
       this.currentPageSync = newVal
     }
   }

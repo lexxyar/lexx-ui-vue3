@@ -21,9 +21,9 @@
   </template>
   <template v-else>
     <a
-        :href="href"
-        class="flex items-center p-2 text-gray-500 transition-colors rounded-md dark:text-light hover:bg-indigo-100 dark:hover:bg-indigo-600 sidebar-item"
-        :class="{ 'text-gray-600 bg-gray-100 active':active }"
+      :href="href"
+      class="flex items-center p-2 text-gray-500 transition-colors rounded-md dark:text-light hover:bg-indigo-100 dark:hover:bg-indigo-600 sidebar-item"
+      :class="{ 'text-gray-600 bg-gray-100 active':active }"
     >
       <span v-if="hasSvgSlot()"
             class="flex items-center justify-center text-lg text-gray-400">
@@ -43,13 +43,11 @@
   </template>
 </template>
 
-<script>
+<script lang="ts">
 import {defineComponent} from "vue"
-import navigationMixin from "@/lib-components/mixins/navigationMixin";
 
 export default defineComponent({
   name: "lxSidebarItem",
-  mixins: [navigationMixin],
   props: {
     href: {
       type: String,
@@ -58,13 +56,26 @@ export default defineComponent({
     to: {
       type: String,
       default: ''
-    }
+    },
+    active: {
+      type: Boolean,
+      default: false
+    },
+    count: {
+      type: Number,
+      default: 0
+    },
   },
   methods: {
-    firstLetter() {
-      const text = this.$slots.default()[0].el?.textContent
+    firstLetter(): string {
+      // @ts-ignore
+      const a = this.$slots.default()
+      const text = a[0]?.el?.textContent
       return text ? text.charAt(0) : '';
-    }
+    },
+    hasSvgSlot() {
+      return !!this.$slots.svg
+    },
   }
 })
 </script>

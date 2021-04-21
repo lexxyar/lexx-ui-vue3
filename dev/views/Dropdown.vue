@@ -10,8 +10,10 @@
   <!--  </div>-->
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import {defineComponent} from 'vue'
+
+export default defineComponent({
   name: "Dropdown",
   data() {
     return ({
@@ -19,11 +21,11 @@ export default {
     })
   },
   methods: {
-    onClick(itm) {
+    onClick(itm:any) {
       console.log(itm)
     }
   }
-}
+})
 </script>
 
 <style scoped>

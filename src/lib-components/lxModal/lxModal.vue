@@ -73,7 +73,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import {defineComponent} from "vue"
 
 export default defineComponent({
@@ -83,7 +83,7 @@ export default defineComponent({
     typ: {
       type: String,
       default: 'info',
-      validator: (value) => {
+      validator: (value:string) => {
         return ['info', 'warning', 'error'].indexOf(value) !== -1
       },
     },
@@ -101,7 +101,7 @@ export default defineComponent({
     },
   },
   computed: {
-    the_title() {
+    the_title():string {
       if (!this.title) {
         switch (this.typ) {
           case 'info':

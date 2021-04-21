@@ -15,9 +15,10 @@
 </template>
 
 <script>
+import {defineComponent} from 'vue'
 import LxTable from "@/lib-components/lxTable/lxTable";
 
-export default {
+export default defineComponent({
   name: "Table",
   components: {LxTable},
   data() {
@@ -74,7 +75,7 @@ export default {
     })
   },
 
-}
+})
 </script>
 
 <style scoped>
