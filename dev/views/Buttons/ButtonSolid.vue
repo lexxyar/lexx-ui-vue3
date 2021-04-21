@@ -1,13 +1,15 @@
 <template>
-  <ButtonLayout />
+  <ButtonLayout/>
 </template>
 
-<script>
-import ButtonLayout from "../../components/ButtonLayout";
-export default {
+<script lang="ts">
+import {defineComponent} from 'vue'
+import ButtonLayout from "../../components/ButtonLayout.vue";
+
+export default defineComponent({
   name: "ButtonSolid",
   components: {ButtonLayout},
-}
+})
 </script>
 
 <style scoped>

@@ -16,8 +16,10 @@
 
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import {defineComponent} from 'vue'
+
+export default defineComponent({
   name: "Modals",
   data() {
     return ({
@@ -30,7 +32,7 @@ export default {
     })
   },
   methods: {}
-}
+})
 </script>
 
 <style scoped>

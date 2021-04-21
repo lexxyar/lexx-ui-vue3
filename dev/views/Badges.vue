@@ -5,14 +5,16 @@
 </template>
 
 <script>
-export default {
+import {defineComponent} from 'vue'
+
+export default defineComponent({
   name: "Badges",
   data() {
     return ({
       styls: ['primary', 'secondary', 'success', 'danger', 'info', 'warning', 'dark', 'light'],
     })
   }
-}
+})
 </script>
 
 <style scoped>

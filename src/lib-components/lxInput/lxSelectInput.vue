@@ -1,6 +1,5 @@
 <template>
-  <!--suppress HtmlUnknownAttribute -->
-  <div v-click-away="onClickAway">
+  <div data-root="lx-dd-list">
     <template v-if="emptyLabel || label">
       <label :for="uid" class="block text-sm font-medium text-gray-700"
              :class="labelClass">{{ label }}</label>
@@ -12,14 +11,19 @@
               aria-expanded="true"
               aria-labelledby="listbox-label"
               @click="open = !open"
+              data-root="lx-dd-list"
       >
         <!--suppress HtmlUnknownTag -->
-        <div class="flex items-center">
+        <div class="flex items-center" data-root="lx-dd-list">
           <template v-if="typeof($slots['item']) !== 'undefined'">
             <slot name="item" :item="selectedOption"></slot>
           </template>
           <template v-else>
-            {{ getValue(selectedOption) }}
+            <span
+              class="ml-3 block truncate font-semibold font-normal">
+              {{ getValue(selectedOption) }}
+            </span>
+
           </template>
         </div>
         <span class="ml-3 absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
@@ -50,7 +54,7 @@
             role="option"
             @click="onChoose(opt[optionValueField])"
           >
-            <div class="flex items-center">
+            <div class="flex items-center" data-root="lx-dd-list">
               <template v-if="typeof($slots['item']) !== 'undefined'">
                 <slot name="item" :item="opt"></slot>
               </template>
@@ -63,70 +67,26 @@
             </template>
           </li>
         </template>
-        <!--        <li x-state:on="Highlighted"-->
-        <!--            x-state:off="Not Highlighted"-->
-        <!--            class="cursor-default select-none relative py-2 pl-3 pr-9 text-gray-900"-->
-        <!--            x-description="Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation."-->
-        <!--            id="listbox-option-2" role="option"-->
-        <!--            @click="choose(2)"-->
-        <!--            @mouseenter="activeIndex = 2"-->
-        <!--            @mouseleave="activeIndex = null"-->
-        <!--            :class="{ 'text-white bg-indigo-600': activeIndex === 2, 'text-gray-900': !(activeIndex === 2) }">-->
-        <!--          <div class="flex items-center">-->
-        <!--            <img-->
-        <!--                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2.25&amp;w=256&amp;h=256&amp;q=80"-->
-        <!--                alt="" class="flex-shrink-0 h-6 w-6 rounded-full">-->
-        <!--            <span x-state:on="Selected" x-state:off="Not Selected" class="ml-3 block truncate font-semibold"-->
-        <!--                  :class="{ 'font-semibold': selectedIndex === 2, 'font-normal': !(selectedIndex === 2) }">-->
-        <!--                  Devon Webb-->
-        <!--                </span>-->
-        <!--          </div>-->
-
-        <!--          <lx-select-input-checkmark/>-->
-        <!--        </li>-->
-
       </ul>
     </div>
   </div>
-
-  <!--  <div>-->
-  <!--    &lt;!&ndash;  <div class="input-group" :class="getCss()">&ndash;&gt;-->
-  <!--    <template v-if="emptyLabel || label">-->
-  <!--      <label :for="uid" :class="labelClass">{{ label }}</label>-->
-  <!--    </template>-->
-  <!--    <select :id="uid"-->
-  <!--            :class="hasAppend?'appended':''"-->
-  <!--            class="shadow-sm border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline"-->
-  <!--            :multiple="multiple"-->
-  <!--            :disabled="readonly"-->
-  <!--            :placeholder="placeholder"-->
-  <!--            :value="modelValue"-->
-  <!--            @change="$emit('update:modelValue', $event.target.value)"-->
-  <!--    >-->
-  <!--      &lt;!&ndash;        @change="$emit('update:modelValue', $event.target.value)"&ndash;&gt;-->
-  <!--      <template v-for="opt in options">-->
-  <!--        <option :value="opt.value" :selected="opt === modelValue">{{ opt.title }}</option>-->
-  <!--      </template>-->
-  <!--    </select>-->
-  <!--    &lt;!&ndash;      <div class="input-extention append" v-if="hasAppend">&ndash;&gt;-->
-  <!--    &lt;!&ndash;        <slot name="append"></slot>&ndash;&gt;-->
-  <!--    &lt;!&ndash;      </div>&ndash;&gt;-->
-  <!--    &lt;!&ndash;    </div>&ndash;&gt;-->
-  <!--    &lt;!&ndash;  </div>&ndash;&gt;-->
-  <!--  </div>-->
 </template>
 
-<script>
+<script lang="ts">
 
-import inputMixin from "@/lib-components/mixins/inputMixin";
 import {defineComponent} from "vue";
-import {mixin as VueClickAway} from "vue3-click-away"
-import lxSelectInputCheckmark from "@/lib-components/lxInput/components/lxSelectInputCheckmark"
+import lxSelectInputCheckmark from "@/lib-components/lxInput/components/lxSelectInputCheckmark.vue";
+// import {default as VueClickAway} from "vue3-click-away"
+// import VueClickAwayPlugin, {default} from "vue3-click-away"
+// import mixin from "vue3-click-away";
+// import { mixin as VueClickAway } from "vue3-click-away";
+
+// const lxSelectInputCheckmark = require("@/lib-components/lxInput/components/lxSelectInputCheckmark")
 
 export default defineComponent({
   name: "lxSelectInput",
   emits: ['update:modelValue'],
-  mixins: [inputMixin, VueClickAway],
+  // mixins: [mixin],
   components: {lxSelectInputCheckmark},
   props: {
     modelValue: {type: String},
@@ -134,24 +94,72 @@ export default defineComponent({
     multiple: {type: Boolean, default: false},
     optionTitleField: {type: String, default: 'title'},
     optionValueField: {type: String, default: 'id'},
+    label: {type: String, default: ''},
+    emptyLabel: {type: Boolean, default: false},
+    readonly: {type: Boolean, default: false},
+    placeholder: {type: String, default: ''},
+    labelSize: {
+      type: String,
+      validator: (value: string) => {
+        return ['', 'sm', 'lg', 'xl'].indexOf(value) !== -1
+      },
+      default: ''
+    },
+    size: {
+      type: String,
+      validator: (value: string) => {
+        return ['', 'sm', 'lg'].indexOf(value) !== -1
+      },
+      default: ''
+    },
   },
   data() {
     return ({
       open: false,
+      uid: this.genUid(),
     })
   },
   created() {
-
+    window.addEventListener('click', (e) => {
+      // e.preventDefault()
+      e.stopPropagation()
+      if (!this.$el.contains(e.target)) {
+        const el = e.target as HTMLElement
+        let dataset = el.dataset
+        if (['SPAN', 'IMG', 'SVG'].includes(el.tagName)) {
+          const parent = el.parentElement as HTMLElement
+          dataset = parent.dataset
+        }
+        if (dataset && !(dataset.root && dataset.root === 'lx-dd-list')) {
+          this.open = false
+        }
+      }
+    })
   },
   computed: {
-    selectedOption() {
-      return this.options.find((i) => +i[this.optionValueField] === +this.modelValue)
+    selectedOption(): any {
+      // @ts-ignore
+      return this.options.find((i: number) => +i[this.optionValueField] === +this.modelValue)
     },
-  },
+    hasAppend(): boolean {
+      // @ts-ignore
+      return this.$slots['append']
+    },
+    hasPrepend(): boolean {
+      // @ts-ignore
+      return this.$slots['prepend']
+    },
+    labelClass() {
+      let val: string[] = [];
+      val.push(this.labelSize)
+
+      if (this.label) {
+        val.push('has-text')
+      }
+      return val.join(' ')
+    },
+  }, // computed
   methods: {
-    onClickAway() {
-      this.open = false
-    },
     onOptionSelect() {
     },
     onEscape() {
@@ -160,18 +168,27 @@ export default defineComponent({
     },
     onArrowDown() {
     },
-    onChoose(e) {
-      // console.log(e)
+    onChoose(e: any) {
       this.$emit('update:modelValue', `${e}`)
       this.open = false
     },
-    getValue(opt) {
+    getValue(opt: any) {
       if (!opt) {
         return ''
       }
       return opt[this.optionTitleField]
     },
-  }
+    getCss(): string {
+      const css = []
+      css.push(this.readonly ? 'readonly' : '')
+      css.push(this.size ? `input-group-${this.size}` : '')
+      return css.join(' ')
+    },
+    genUid(): string {
+      return '_' + Math.random().toString(36).substr(2, 9);
+    },
+  } // methods
+
 })
 </script>
 

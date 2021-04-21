@@ -1,11 +1,12 @@
-// import '@/lib-components/styles/tailwind.css'
-import '@/lib-components/styles/index.scss'
+import {App, Plugin} from 'vue';
 
 // Import vue components
 import * as components from '@/lib-components/index';
 
+import '@/lib-components/styles/index.scss'
+
 // install function executed by Vue.use()
-const install = function installLexxUiVue3(app) {
+const install: Exclude<Plugin['install'], undefined> = function installLexxUiVue3(app: App) {
   Object.entries(components).forEach(([componentName, component]) => {
     app.component(componentName, component);
   });

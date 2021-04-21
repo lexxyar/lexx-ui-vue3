@@ -117,13 +117,15 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import {defineComponent} from "vue";
+
+export default defineComponent({
   name: "ButtonLayout",
   props: {
     typ: {
       type: String,
-      validator: (value) => {
+      validator: (value: string) => {
         return ['', 'flat', 'rounded', 'pill'].indexOf(value) !== -1
       },
       default: '',
@@ -166,7 +168,7 @@ export default {
       return text ? icon + text : icon
     }
   }
-}
+})
 </script>
 
 <style scoped>

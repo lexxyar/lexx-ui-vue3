@@ -1,4 +1,3 @@
-<!--suppress HtmlFormInputWithoutLabel -->
 <template>
   <table class="border-collapse shadow-sm bg-white border-t-3 border-blue-400 lx-table-zebra w-full">
     <thead>
@@ -30,8 +29,14 @@
   </table>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+interface LxTableData {
+  checkAll: boolean
+}
+
+export default defineComponent({
   name: "lxTable",
   props: {
     checkboxes: {
@@ -47,18 +52,18 @@ export default {
       default: []
     }
   },
-  data() {
+  data():LxTableData {
     return ({
       checkAll: false,
     })
   },
   watch: {
-    checkAll(val) {
-      this.data.map(itm => itm.checked = val)
+    checkAll(val:any) {
+      this.data.map((itm:any) => itm.checked = val)
     },
   },
   methods: {}
-}
+})
 </script>
 
 <style scoped>

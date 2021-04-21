@@ -27,31 +27,51 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import {defineComponent} from "vue"
-import inputMixin from "../mixins/inputMixin";
 
 export default defineComponent({
   name: "lxInput",
   emits: ['update:modelValue', 'input'],
-  mixins: [inputMixin],
+
   props: {
     modelValue: String,
-    type: {
-      type: String,
-      default: 'text',
-      validator: (value) => {
-        return ['text', 'number', 'email', 'phone', 'password'].indexOf(value) !== -1
-      },
-    },
+    readonly: {type: Boolean, default: false},
     commitTimout: {
       type: Number,
       default: 0
     },
+    label: {type: String, default: ''},
+    size: {
+      type: String,
+      default: '',
+      validator: (value: string) => {
+        return ['', 'sm', 'lg', 'xl'].indexOf(value) !== -1
+      },
+    },
+    labelSize: {
+      type: String,
+      validator: (value: string) => {
+        return ['', 'sm', 'lg', 'xl'].indexOf(value) !== -1
+      },
+      default: ''
+    },
+    emptyLabel: {type: Boolean, default: false},
+    placeholder: {type: String, default: ''},
+
+    type: {
+      type: String,
+      default: 'text',
+      validator: (value: string) => {
+        return ['text', 'number', 'email', 'phone', 'password'].indexOf(value) !== -1
+      },
+    },
   },
+
   data() {
     return ({
-      timer: null,
+      timer: 0,
+      uid: this.genUid(),
     })
   },
   computed: {
@@ -64,21 +84,49 @@ export default defineComponent({
       }
       return 1
     },
+    hasAppend(): boolean {
+      // @ts-ignore
+      return this.$slots['append']
+    },
+    hasPrepend(): boolean {
+      // @ts-ignore
+      return this.$slots['prepend']
+    },
+    labelClass() {
+      let val: string[] = [];
+      val.push(this.labelSize)
 
+      if (this.label) {
+        val.push('has-text')
+      }
+      return val.join(' ')
+    },
   },
   methods: {
-    onInput(e) {
+    onInput(e: any) {
+      const that = this
       if (+this.commitTimout > 0) {
         if (!!this.timer)
           clearTimeout(this.timer)
-        this.timer = setTimeout(function () {
-          this.$emit('input', e)
+        this.timer = +global.setTimeout(function () {
+          that.$emit('input', e)
         }.bind(this), this.commitTimout)
       } else {
         this.$emit('input', e)
       }
       this.$emit('update:modelValue', e)
-
+    },
+    getCss(): string {
+      const css: string[] = []
+      css.push(this.readonly ? 'readonly' : '')
+      // css.push(this.size ? `input-group-${this.size}` : '')
+      if (this.size) {
+        css.push(`input-group-${this.size}`)
+      }
+      return css.join(' ')
+    },
+    genUid():string {
+      return '_' + Math.random().toString(36).substr(2, 9);
     }
   },
 })
