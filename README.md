@@ -1,4 +1,6 @@
 # Version changes
+## 0.3.1
+* `*.d.ts` copied to `dist` folder
 ## 0.3.0
 * Refactor to TypeScript
 * `console.log` clearing
