@@ -8,6 +8,7 @@ import '@/lib-components/styles/index.scss'
 // install function executed by Vue.use()
 const install: Exclude<Plugin['install'], undefined> = function installLexxUiVue3(app: App) {
   Object.entries(components).forEach(([componentName, component]) => {
+    // @ts-ignore
     app.component(componentName, component);
   });
 };

@@ -11,6 +11,8 @@ import PostCSS from 'rollup-plugin-postcss';
 import {terser} from 'rollup-plugin-terser';
 import minimist from 'minimist';
 import scss from 'rollup-plugin-scss';
+// import typescript from 'rollup-plugin-typescript2';
+import copy from 'rollup-plugin-copy'
 
 // Get browserslist config and remove ie from es build targets
 const esbrowserslist = fs.readFileSync('./.browserslistrc')
@@ -66,6 +68,12 @@ const baseConfig = {
     scss: {
       output: 'dist/lexx-ui-vue3.css',
       // processor: css => postcss([autoprefixer({ overrideBrowserslist: "Edge 18" })]),
+    },
+    typescript: {},
+    copy: {
+      targets: [
+        {src: 'LexxUIVue3.d.ts', dest: 'dist/'},
+      ]
     }
   },
 };
@@ -118,6 +126,8 @@ if (!argv.format || argv.format === 'es') {
       }),
       commonjs(),
       scss(baseConfig.plugins.scss),
+      // typescript(baseConfig.plugins.typescript),
+      copy(baseConfig.plugins.copy),
     ],
   };
   buildFormats.push(esConfig);
@@ -144,6 +154,8 @@ if (!argv.format || argv.format === 'cjs') {
       babel(baseConfig.plugins.babel),
       commonjs(),
       scss(baseConfig.plugins.scss),
+      // typescript(baseConfig.plugins.typescript),
+      copy(baseConfig.plugins.copy),
     ],
   };
   buildFormats.push(umdConfig);
@@ -175,6 +187,8 @@ if (!argv.format || argv.format === 'iife') {
         },
       }),
       scss(baseConfig.plugins.scss),
+      // typescript(baseConfig.plugins.typescript),
+      copy(baseConfig.plugins.copy),
     ],
   };
   buildFormats.push(unpkgConfig);
