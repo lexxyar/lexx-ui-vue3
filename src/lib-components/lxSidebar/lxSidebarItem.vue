@@ -70,8 +70,11 @@ export default defineComponent({
     firstLetter(): string {
       // @ts-ignore
       const a = this.$slots.default()
-      const text = a[0]?.el?.textContent
-      return text ? text.charAt(0) : '';
+      if(a && a[0] && a[0].el) {
+        const text = a[0].el.textContent
+        return text ? text.charAt(0) : '';
+      }
+      return ''
     },
     hasSvgSlot() {
       return !!this.$slots.svg
