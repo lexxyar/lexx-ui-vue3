@@ -76,17 +76,10 @@
 
 import {defineComponent} from "vue";
 import lxSelectInputCheckmark from "@/lib-components/lxInput/components/lxSelectInputCheckmark.vue";
-// import {default as VueClickAway} from "vue3-click-away"
-// import VueClickAwayPlugin, {default} from "vue3-click-away"
-// import mixin from "vue3-click-away";
-// import { mixin as VueClickAway } from "vue3-click-away";
-
-// const lxSelectInputCheckmark = require("@/lib-components/lxInput/components/lxSelectInputCheckmark")
 
 export default defineComponent({
   name: "lxSelectInput",
   emits: ['update:modelValue'],
-  // mixins: [mixin],
   components: {lxSelectInputCheckmark},
   props: {
     modelValue: {type: String},
@@ -121,7 +114,6 @@ export default defineComponent({
   },
   created() {
     window.addEventListener('click', (e) => {
-      // e.preventDefault()
       e.stopPropagation()
       if (!this.$el.contains(e.target)) {
         const el = e.target as HTMLElement

@@ -3,7 +3,7 @@ import {App, Plugin} from 'vue';
 // Import vue components
 import * as components from '@/lib-components/index';
 
-// import '@/lib-components/styles/index.scss'
+import '@/lib-components/styles/index.scss'
 
 // install function executed by Vue.use()
 const install: Exclude<Plugin['install'], undefined> = function installLexxUiVue3(app: App) {
