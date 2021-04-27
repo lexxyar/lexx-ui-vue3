@@ -1,4 +1,12 @@
 # Version changes
+## 0.3.5
+* lxCheckbox label layout bug fix
+## 0.3.4
+* CSS include to compilation bug fix
+## 0.3.3
+* lxSidebarItem.vue `firstLetter` refactor
+## 0.3.2
+* *.d.ts copied to dist folder
 ## 0.3.1
 * `*.d.ts` copied to `dist` folder
 ## 0.3.0

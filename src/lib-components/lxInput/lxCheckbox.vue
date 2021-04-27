@@ -1,11 +1,11 @@
 <template>
 
-  <input type="checkbox" class="form-checkbox h-5 w-5 text-red-600" :id="uid"
-         @change="onStateChange" :checked="modelValue">
-
   <label class="inline-flex items-center" :for="uid">
-    <span class="ml-2 text-gray-700">{{ label }}</span>
+    <input type="checkbox" class="form-checkbox h-5 w-5 text-red-600" :id="uid"
+           @change="onStateChange" :checked="modelValue">
 
+
+    <span class="ml-2 text-gray-700">{{ label }}</span>
   </label>
 </template>
 
