@@ -2,7 +2,6 @@
 <template>
   <div id="app" class="flex h-screen overflow-y-hidden bg-white">
 
-    <!--suppress HtmlUnknownTag -->
     <lxSidebar :open="open" @toggle="toggleSidebar">
       <template #brand>
         <span :class="{'lg:justify-center': !open}">L</span><span :class="{'hidden': !open}">ara</span>
@@ -44,6 +43,7 @@
         <template #submenu>
           <lx-sidebar-item to="/basic-inputs">Basic</lx-sidebar-item>
           <lx-sidebar-item to="/group-inputs">Input groups</lx-sidebar-item>
+          <lx-sidebar-item to="/searchhelp-inputs">Search help</lx-sidebar-item>
         </template>
       </lx-sidebar-dd-item>
       <!--      /Inputs-->
@@ -97,6 +97,7 @@
         </template>
       </lx-sidebar-dd-item>
       <!--      /Pages-->
+
     </lxSidebar>
 
     <!--    <lexx-ui-vue3-sample />-->

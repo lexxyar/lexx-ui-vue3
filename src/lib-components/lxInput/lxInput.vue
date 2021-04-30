@@ -11,7 +11,7 @@
         v-if="hasPrepend">
         <slot name="prepend"></slot>
       </div>
-      <!--suppress HtmlFormInputWithoutLabel -->
+
       <input :type="type" :id="uid" :placeholder="placeholder" :readonly="readonly"
              @input="onInput($event.target.value)" :value="modelValue"
              class="shadow-sm border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline"

@@ -1,35 +1,24 @@
-<template>
-  <template v-if="$router && !!to">
-    <router-link :to="to" class="btn" :class="getCss()" :disabled="disabled">
-      <slot></slot>
-    </router-link>
-  </template>
-  <template v-else>
-    <button class="btn" :class="getCss()" :disabled="disabled">
-      <slot/>
-    </button>
-  </template>
-</template>
-
 <script lang="ts">
 import {defineComponent} from 'vue';
+import {Size, Styl, Typ} from "@/lib-components/definitions";
 
 export default defineComponent({
   name: "lxButton",
   props: {
     styl: {
-      type: String,
-      validator: (value: string) => {
-        return ['primary', 'secondary', 'success', 'danger', 'info', 'warning', 'dark', 'light'].indexOf(value) !== -1
+      type: String as () => Styl,
+      validator: (value: Styl) => {
+        return [Styl.primary, Styl.secondary, Styl.success, Styl.danger, Styl.info,
+          Styl.warning, Styl.dark, Styl.light].indexOf(value) !== -1
       },
-      default: 'primary',
+      default: Styl.primary,
     },
     typ: {
-      type: String,
-      validator: (value: string) => {
-        return ['', 'flat', 'rounded', 'pill'].indexOf(value) !== -1
+      type: String as () => Typ,
+      validator: (value: Typ) => {
+        return [Typ.none, Typ.flat, Typ.rounded, Typ.pill].indexOf(value) !== -1
       },
-      default: '',
+      default: Typ.none,
     },
     outline: {
       type: Boolean,
@@ -44,11 +33,11 @@ export default defineComponent({
       default: false,
     },
     size: {
-      type: String,
-      validator: (value: string) => {
-        return ['', 'md', 'lg', 'sm'].indexOf(value) !== -1
+      type: String as () => Size,
+      validator: (value: Size) => {
+        return [Size.none, Size.md, Size.lg, Size.sm].indexOf(value) !== -1
       },
-      default: '',
+      default: Size.none,
     },
     to: {
       type: String,
@@ -71,6 +60,15 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-
-</style>
+<template>
+  <template v-if="$router && !!to">
+    <router-link :to="to" class="btn" :class="getCss()" :disabled="disabled">
+      <slot></slot>
+    </router-link>
+  </template>
+  <template v-else>
+    <button class="btn" :class="getCss()" :disabled="disabled">
+      <slot/>
+    </button>
+  </template>
+</template>

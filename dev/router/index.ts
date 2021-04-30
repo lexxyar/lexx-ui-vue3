@@ -1,9 +1,9 @@
-import {createRouter, createWebHistory} from "vue-router"
+import {createRouter, createWebHistory, RouteRecordRaw} from "vue-router"
 import buttonRoutes from "./button-routes";
 import cardRoutes from "./card-routes";
 import inputRoutes from "./input-routes";
 
-let routes = [
+let routes:RouteRecordRaw[] = [
   {
     path: "/",
     name: "Home",

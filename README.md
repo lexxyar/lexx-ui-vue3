@@ -1,4 +1,13 @@
+# lexx-ui-vue3
+
+# Installation
+```shell script
+npm i lexx-ui-vue3
+```
+
 # Version changes
+## 0.4.0
+* lsSearchHelp feature
 ## 0.3.5
 * lxCheckbox label layout bug fix
 ## 0.3.4
