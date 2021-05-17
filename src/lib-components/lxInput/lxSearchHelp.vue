@@ -5,7 +5,7 @@ export default defineComponent({
   name: "lxSearchHelp",
   emits:['update:modelValue'],
   props: {
-    modelValue: String|Number,
+    modelValue: String,
     readonly: {type: Boolean, default: false},
     label: {type: String, default: ''},
     emptyLabel: {type: Boolean, default: false},
@@ -31,21 +31,25 @@ export default defineComponent({
     this.value = this.getSelected()
   },
   methods: {
-    onCancelClick(e) {
+    onCancelClick(e:any) {
       if (e.target.classList.contains('lx-modal-closable')) {
         e.stopPropagation()
         this.showModal = false
       }
     },
-    onRowClick(e) {
+    onRowClick(e:any) {
       this.selectedKey = e[this.keyField]
       this.value = this.getSelected()
       this.showModal = false
       this.$emit('update:modelValue', this.selectedKey)
     },
     getSelected() {
-      const find = this.tableContent.find(itm => itm[this.keyField] === this.selectedKey)
-      return find[this.valueField]
+      const find:any = this.tableContent?.find((itm:any) => itm[this.keyField] == this.selectedKey)
+      if (find){
+        return find[this.valueField]
+      }else{
+        return ''
+      }
     }
   },
 })
