@@ -6,6 +6,8 @@ npm i lexx-ui-vue3
 ```
 
 # Version changes
+## 0.4.3
+* lsSearchHelp overflow fix
 ## 0.4.2
 * lsSearchHelp `getSelected` bug fix
 * added `watch` for `tableContent` change

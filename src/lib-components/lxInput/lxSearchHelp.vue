@@ -77,7 +77,8 @@ export default defineComponent({
   <div
     class="lx-modal-closable main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster"
     style="background: rgba(0,0,0,.7);" v-show="showModal" @click="onCancelClick">
-    <div class="md:w-2/3 sm:w-full rounded-lg shadow-lg bg-white my-3 max-h-screen">
+    <div class="md:w-2/3 sm:w-full rounded-lg shadow-lg bg-white my-3 max-h-90screen">
+<!--      max-h-screen-->
       <div class="flex justify-between border-b border-gray-100 px-5 py-4">
         <div class="flex">
 
@@ -96,7 +97,7 @@ export default defineComponent({
         </div>
       </div>
 
-      <div class="px-10 py-5 text-gray-600">
+      <div class="px-10 py-5 text-gray-600 max-h-70screen overflow-auto">
         <!--        content-->
         <lx-table :header="tableHeader" :data="tableContent" :checkboxes="false"
                   @row-click="onRowClick"></lx-table>

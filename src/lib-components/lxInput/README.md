@@ -14,6 +14,12 @@ tableContent|Array| | |
 keyField|String|`id`| |
 valueField|String|`name`| |
 
+### Emits
+Emit|Parameter
+---|---
+update:modelValue|selectedKey
+
+
 ### Header structure
 Field|Required|Description
 ---|---|---
