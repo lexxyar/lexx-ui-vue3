@@ -168,7 +168,7 @@ var Size;
       return !!this.$slots.footer;
     }
   }
-});var _withId$i = /*#__PURE__*/vue.withScopeId("data-v-57fb28d8");
+});var _withId$j = /*#__PURE__*/vue.withScopeId("data-v-57fb28d8");
 
 vue.pushScopeId("data-v-57fb28d8");
 
@@ -178,7 +178,7 @@ var _hoisted_1$h = {
 
 vue.popScopeId();
 
-var render$l = /*#__PURE__*/_withId$i(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$l = /*#__PURE__*/_withId$j(function (_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("div", _hoisted_1$h, [vue.createVNode("div", {
     class: ["overflow-hidden shadow-md", _ctx.dark ? 'text-gray-100' : '']
   }, [_ctx.hasHeaderSlot() ? (vue.openBlock(), vue.createBlock("div", {
@@ -227,7 +227,7 @@ script$l.__scopeId = "data-v-57fb28d8";var script$k = vue.defineComponent({
       this.isSidebarOpen = val;
     }
   }
-});var _withId$h = /*#__PURE__*/vue.withScopeId("data-v-57a0903f");
+});var _withId$i = /*#__PURE__*/vue.withScopeId("data-v-57a0903f");
 
 vue.pushScopeId("data-v-57a0903f");
 
@@ -258,7 +258,7 @@ var _hoisted_4$b = {
 
 vue.popScopeId();
 
-var render$k = /*#__PURE__*/_withId$h(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$k = /*#__PURE__*/_withId$i(function (_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("aside", {
     onKeydown: _cache[2] || (_cache[2] = vue.withKeys(function ($event) {
       return _ctx.window.innerWidth <= 1024 ? _ctx.isSidebarOpen = false : '';
@@ -315,7 +315,7 @@ script$k.__scopeId = "data-v-57a0903f";var script$j = vue.defineComponent({
       return !!this.$slots.svg;
     }
   }
-});var _withId$g = /*#__PURE__*/vue.withScopeId("data-v-74b2f265");
+});var _withId$h = /*#__PURE__*/vue.withScopeId("data-v-74b2f265");
 
 vue.pushScopeId("data-v-74b2f265");
 
@@ -346,7 +346,7 @@ var _hoisted_6$8 = {
 
 vue.popScopeId();
 
-var render$j = /*#__PURE__*/_withId$g(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$j = /*#__PURE__*/_withId$h(function (_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = vue.resolveComponent("router-link");
 
   return _ctx.$router && !!_ctx.to ? (vue.openBlock(), vue.createBlock(_component_router_link, {
@@ -354,7 +354,7 @@ var render$j = /*#__PURE__*/_withId$g(function (_ctx, _cache, $props, $setup, $d
     to: _ctx.to,
     class: "flex items-center p-2 text-gray-500 transition-colors rounded-md dark:text-light hover:bg-indigo-100 dark:hover:bg-indigo-600 sidebar-item"
   }, {
-    default: _withId$g(function () {
+    default: _withId$h(function () {
       return [_ctx.hasSvgSlot() ? (vue.openBlock(), vue.createBlock("span", _hoisted_1$f, [vue.renderSlot(_ctx.$slots, "svg")])) : vue.createCommentVNode("", true), !_ctx.hasSvgSlot() ? (vue.openBlock(), vue.createBlock("span", _hoisted_2$b, vue.toDisplayString(_ctx.firstLetter()), 1)) : vue.createCommentVNode("", true), vue.createVNode("span", {
         class: ["text-sm ml-2 sidebar-item-text", {
           'ml-7': _ctx.hasSvgSlot
@@ -396,7 +396,7 @@ script$j.__scopeId = "data-v-74b2f265";var script$i = vue.defineComponent({
       return !!this.$slots.svg;
     }
   }
-});var _withId$f = /*#__PURE__*/vue.withScopeId("data-v-78336f59");
+});var _withId$g = /*#__PURE__*/vue.withScopeId("data-v-78336f59");
 
 vue.pushScopeId("data-v-78336f59");
 
@@ -426,7 +426,7 @@ var _hoisted_5$8 = {
 
 vue.popScopeId();
 
-var render$i = /*#__PURE__*/_withId$f(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$i = /*#__PURE__*/_withId$g(function (_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock(vue.Fragment, null, [vue.createVNode("a", {
     href: "#",
     onClick: _cache[1] || (_cache[1] = function ($event) {
@@ -480,7 +480,7 @@ script$i.__scopeId = "data-v-78336f59";var script$h = vue.defineComponent({
       this.isSidebarOpen = val;
     }
   }
-});var _withId$e = /*#__PURE__*/vue.withScopeId("data-v-01efeae6");
+});var _withId$f = /*#__PURE__*/vue.withScopeId("data-v-01efeae6");
 
 vue.pushScopeId("data-v-01efeae6");
 
@@ -511,7 +511,7 @@ var _hoisted_6$7 = {
 
 vue.popScopeId();
 
-var render$h = /*#__PURE__*/_withId$e(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$h = /*#__PURE__*/_withId$f(function (_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("header", _hoisted_1$d, [vue.createVNode("div", _hoisted_2$9, [vue.createVNode("div", _hoisted_3$8, [vue.createVNode("button", {
     onClick: _cache[1] || (_cache[1] = function () {
       return _ctx.onToggleSidebar && _ctx.onToggleSidebar.apply(_ctx, arguments);
@@ -539,9 +539,9 @@ script$h.__scopeId = "data-v-01efeae6";var script$g = vue.defineComponent({
       default: ''
     }
   }
-});var _withId$d = /*#__PURE__*/vue.withScopeId("data-v-344cdbda");
+});var _withId$e = /*#__PURE__*/vue.withScopeId("data-v-344cdbda");
 
-var render$g = /*#__PURE__*/_withId$d(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$g = /*#__PURE__*/_withId$e(function (_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = vue.resolveComponent("router-link");
 
   return _ctx.$router && !!_ctx.to ? (vue.openBlock(), vue.createBlock(_component_router_link, {
@@ -549,7 +549,7 @@ var render$g = /*#__PURE__*/_withId$d(function (_ctx, _cache, $props, $setup, $d
     to: _ctx.to,
     class: "flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal no-underline flex items-center hover:bg-gray-200"
   }, {
-    default: _withId$d(function () {
+    default: _withId$e(function () {
       return [vue.renderSlot(_ctx.$slots, "default")];
     }),
     _: 3
@@ -561,7 +561,7 @@ var render$g = /*#__PURE__*/_withId$d(function (_ctx, _cache, $props, $setup, $d
 });script$g.render = render$g;
 script$g.__scopeId = "data-v-344cdbda";var script$f = vue.defineComponent({
   name: "lxNavbarButton"
-});var _withId$c = /*#__PURE__*/vue.withScopeId("data-v-2384de5e");
+});var _withId$d = /*#__PURE__*/vue.withScopeId("data-v-2384de5e");
 
 vue.pushScopeId("data-v-2384de5e");
 
@@ -571,7 +571,7 @@ var _hoisted_1$c = {
 
 vue.popScopeId();
 
-var render$f = /*#__PURE__*/_withId$c(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$f = /*#__PURE__*/_withId$d(function (_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("button", _hoisted_1$c, [vue.renderSlot(_ctx.$slots, "default")]);
 });script$f.render = render$f;
 script$f.__scopeId = "data-v-2384de5e";var script$e = vue.defineComponent({
@@ -585,9 +585,9 @@ script$f.__scopeId = "data-v-2384de5e";var script$e = vue.defineComponent({
   data: function data() {
     return {};
   }
-});var _withId$b = /*#__PURE__*/vue.withScopeId("data-v-12c1e44a");
+});var _withId$c = /*#__PURE__*/vue.withScopeId("data-v-12c1e44a");
 
-var render$e = /*#__PURE__*/_withId$b(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$e = /*#__PURE__*/_withId$c(function (_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("div", {
     class: ["absolute top-full py-2 w-48 bg-white rounded-md shadow-xl z-20 lx-dropdown-menu", _ctx.right ? 'right-0' : 'left-0'],
     role: "dropdown-menu"
@@ -604,9 +604,9 @@ script$e.__scopeId = "data-v-12c1e44a";var script$d = vue.defineComponent({
       default: ''
     }
   }
-});var _withId$a = /*#__PURE__*/vue.withScopeId("data-v-683dd364");
+});var _withId$b = /*#__PURE__*/vue.withScopeId("data-v-683dd364");
 
-var render$d = /*#__PURE__*/_withId$a(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$d = /*#__PURE__*/_withId$b(function (_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = vue.resolveComponent("router-link");
 
   return !!_ctx.$router && _ctx.to ? (vue.openBlock(), vue.createBlock(_component_router_link, {
@@ -614,7 +614,7 @@ var render$d = /*#__PURE__*/_withId$a(function (_ctx, _cache, $props, $setup, $d
     class: "block px-4 py-2 text-sm text-left capitalize text-gray-700 hover:bg-blue-500 hover:text-white",
     to: _ctx.to
   }, {
-    default: _withId$a(function () {
+    default: _withId$b(function () {
       return [vue.renderSlot(_ctx.$slots, "default")];
     }),
     _: 3
@@ -767,7 +767,7 @@ function render$c(_ctx, _cache, $props, $setup, $data, $options) {
       this.currentPageSync = newVal;
     }
   }
-});var _withId$9 = /*#__PURE__*/vue.withScopeId("data-v-724bff53");
+});var _withId$a = /*#__PURE__*/vue.withScopeId("data-v-724bff53");
 
 vue.pushScopeId("data-v-724bff53");
 
@@ -777,7 +777,7 @@ var _hoisted_1$a = {
 
 vue.popScopeId();
 
-var render$b = /*#__PURE__*/_withId$9(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$b = /*#__PURE__*/_withId$a(function (_ctx, _cache, $props, $setup, $data, $options) {
   var _component_lx_button = vue.resolveComponent("lx-button");
 
   return vue.openBlock(), vue.createBlock("div", _hoisted_1$a, [vue.createVNode(_component_lx_button, {
@@ -786,7 +786,7 @@ var render$b = /*#__PURE__*/_withId$9(function (_ctx, _cache, $props, $setup, $d
       return _ctx.onChangePage(-1);
     })
   }, {
-    default: _withId$9(function () {
+    default: _withId$a(function () {
       return [vue.createTextVNode(vue.toDisplayString(_ctx.prevButtonText), 1)];
     }),
     _: 1
@@ -797,7 +797,7 @@ var render$b = /*#__PURE__*/_withId$9(function (_ctx, _cache, $props, $setup, $d
         return _ctx.onPageClick(i);
       }
     }, {
-      default: _withId$9(function () {
+      default: _withId$a(function () {
         return [vue.createTextVNode(vue.toDisplayString(i), 1)];
       }),
       _: 2
@@ -808,7 +808,7 @@ var render$b = /*#__PURE__*/_withId$9(function (_ctx, _cache, $props, $setup, $d
       return _ctx.onChangePage(1);
     })
   }, {
-    default: _withId$9(function () {
+    default: _withId$a(function () {
       return [vue.createTextVNode(vue.toDisplayString(_ctx.nextButtonText), 1)];
     }),
     _: 1
@@ -934,7 +934,11 @@ script$b.__scopeId = "data-v-724bff53";var script$a = vue.defineComponent({
       this.$emit('onclear');
     }
   }
-});var _hoisted_1$9 = {
+});var _withId$9 = /*#__PURE__*/vue.withScopeId("data-v-9298801c");
+
+vue.pushScopeId("data-v-9298801c");
+
+var _hoisted_1$9 = {
   class: "flex flex-col"
 };
 var _hoisted_2$7 = {
@@ -955,7 +959,10 @@ var _hoisted_6$5 = {
   key: 1,
   class: "shadow-sm border rounded rounded-l-none border-l-0 flex-none py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline input-extention append"
 };
-function render$a(_ctx, _cache, $props, $setup, $data, $options) {
+
+vue.popScopeId();
+
+var render$a = /*#__PURE__*/_withId$9(function (_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("div", _hoisted_1$9, [_ctx.emptyLabel || _ctx.label ? (vue.openBlock(), vue.createBlock("label", {
     key: 0,
     for: _ctx.uid,
@@ -978,7 +985,8 @@ function render$a(_ctx, _cache, $props, $setup, $data, $options) {
       return _ctx.onClearClick && _ctx.onClearClick.apply(_ctx, arguments);
     })
   }, "×")])) : vue.createCommentVNode("", true)]), _ctx.hasAppend ? (vue.openBlock(), vue.createBlock("div", _hoisted_6$5, [vue.renderSlot(_ctx.$slots, "append")])) : vue.createCommentVNode("", true)])]);
-}script$a.render = render$a;var script$9 = vue.defineComponent({
+});script$a.render = render$a;
+script$a.__scopeId = "data-v-9298801c";var script$9 = vue.defineComponent({
   name: "lxSelectInputCheckmark"
 });var _withId$8 = /*#__PURE__*/vue.withScopeId("data-v-700b42a7");
 

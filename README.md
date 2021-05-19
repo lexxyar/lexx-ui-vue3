@@ -6,8 +6,12 @@ npm i lexx-ui-vue3
 ```
 
 # Version changes
+## 0.5.3
+Restore?
+## 0.5.2
+* Crashed: scoped scss for clear button
 ## 0.5.1
-* scoped scss for clear button
+* Crashed
 ## 0.5.0
 * lxInput added `clearButton` attribute and fire `onclear` emit
 ## 0.4.3
