@@ -6,6 +6,8 @@ npm i lexx-ui-vue3
 ```
 
 # Version changes
+## 0.5.0
+* lxInput added `clearButton` attribute and fire `onclear` emit
 ## 0.4.3
 * lsSearchHelp overflow fix
 ## 0.4.2

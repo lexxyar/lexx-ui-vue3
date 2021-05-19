@@ -1,42 +1,14 @@
-<template>
-  <div class="flex flex-col">
-    <template v-if="emptyLabel || label">
-      <label :for="uid" class="text-md">{{ label }}</label>
-    </template>
-
-    <div class="input-container flex">
-
-      <div
-        class="shadow-sm border rounded rounded-r-none border-r-0 flex-none py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline input-extention prepend"
-        v-if="hasPrepend">
-        <slot name="prepend"></slot>
-      </div>
-
-      <input :type="type" :id="uid" :placeholder="placeholder" :readonly="readonly"
-             @input="onInput($event.target.value)" :value="modelValue"
-             class="shadow-sm border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline"
-             :class="{'rounded-l-none':hasPrepend, 'rounded-r-none':hasAppend}"
-      />
-      <div
-        class="shadow-sm border rounded rounded-l-none border-l-0 flex-none py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline input-extention append"
-        v-if="hasAppend">
-        <slot name="append"></slot>
-      </div>
-    </div>
-
-  </div>
-</template>
-
 <script lang="ts">
 import {defineComponent} from "vue"
 
 export default defineComponent({
   name: "lxInput",
-  emits: ['update:modelValue', 'input'],
+  emits: ['update:modelValue', 'input', 'onclear'],
 
   props: {
     modelValue: String,
     readonly: {type: Boolean, default: false},
+    clearButton: {type: Boolean, default: true},
     commitTimout: {
       type: Number,
       default: 0
@@ -125,13 +97,45 @@ export default defineComponent({
       }
       return css.join(' ')
     },
-    genUid():string {
+    genUid(): string {
       return '_' + Math.random().toString(36).substr(2, 9);
+    },
+    onClearClick(){
+      this.$emit('onclear')
     }
   },
 })
 </script>
 
-<style scoped>
+<template>
+  <div class="flex flex-col">
+    <template v-if="emptyLabel || label">
+      <label :for="uid" class="text-md">{{ label }}</label>
+    </template>
 
-</style>
+    <div class="input-container flex relative">
+
+      <div
+        class="shadow-sm border rounded rounded-r-none border-r-0 flex-none py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline input-extention prepend"
+        v-if="hasPrepend">
+        <slot name="prepend"></slot>
+      </div>
+
+      <div class="relative w-full lx-input-clear">
+        <input :type="type" :id="uid" :placeholder="placeholder" :readonly="readonly"
+               @input="onInput($event.target.value)" :value="modelValue"
+               class="shadow-sm border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline lx-input"
+               :class="{'rounded-l-none':hasPrepend, 'rounded-r-none':hasAppend}"
+        />
+
+        <div v-if="clearButton" class="lx-input-clear-button mb-2 mt-1"><span @click="onClearClick">&times;</span></div>
+      </div>
+      <div
+        class="shadow-sm border rounded rounded-l-none border-l-0 flex-none py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline input-extention append"
+        v-if="hasAppend">
+        <slot name="append"></slot>
+      </div>
+    </div>
+
+  </div>
+</template>
