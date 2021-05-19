@@ -8,19 +8,43 @@ export default defineComponent({
   },
   data() {
     return ({
-      inputValue: 2,
+      inputValue: '2',
       tableHeader:[
         {key: 'id', title: 'ID'},
         {key: 'company', title: 'Компания'},
         {key: 'program', title: 'ERP'},
       ],
       tableContent:[
-        {id: 1, company: 'First soft', program:'1C'},
-        {id: 2, company: 'Railway course', program:'SAP'},
-        {id: 3, company: 'Oil & Gas company', program:'SAP'},
-        {id: 4, company: 'Wheel logistic', program:'Axapta'},
-      ]
+        // {id: 1, company: 'First soft', program:'1C'},
+        // {id: 2, company: 'Railway course', program:'SAP'},
+        // {id: 3, company: 'Oil & Gas company', program:'SAP'},
+        // {id: 4, company: 'Wheel logistic', program:'Axapta'},
+      ] as any
     })
+  },
+  methods:{
+    dummyData():any{
+      return [
+        {id: '1', company: 'First soft', program:'1C'},
+        {id: '2', company: 'Railway course', program:'SAP'},
+        {id: '3', company: 'Oil & Gas company', program:'SAP'},
+        {id: '4', company: 'Wheel logistic', program:'Axapta'},
+      ]
+    },
+    getData(){
+      return new Promise((resolve:Function)=>{
+        setTimeout(()=>{
+          this.tableContent = this.dummyData()
+          resolve()
+        }, 2)
+      })
+    }
+  },
+  created() {
+    this.getData().then(()=>{
+      console.log(this.tableContent)
+    })
+    console.log('no data')
   }
 })
 </script>

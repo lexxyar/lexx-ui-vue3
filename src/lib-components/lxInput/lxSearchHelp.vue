@@ -3,7 +3,7 @@ import {defineComponent} from 'vue'
 
 export default defineComponent({
   name: "lxSearchHelp",
-  emits:['update:modelValue'],
+  emits: ['update:modelValue'],
   props: {
     modelValue: String,
     readonly: {type: Boolean, default: false},
@@ -13,8 +13,8 @@ export default defineComponent({
     helpTitle: String,
     tableHeader: Array,
     tableContent: Array,
-    keyField:{type:String, default:'id'},
-    valueField:{type:String, default:'name'},
+    keyField: {type: String, default: 'id'},
+    valueField: {type: String, default: 'name'},
   },
   setup() {
 
@@ -31,27 +31,33 @@ export default defineComponent({
     this.value = this.getSelected()
   },
   methods: {
-    onCancelClick(e:any) {
+    onCancelClick(e: any) {
       if (e.target.classList.contains('lx-modal-closable')) {
         e.stopPropagation()
         this.showModal = false
       }
     },
-    onRowClick(e:any) {
+    onRowClick(e: any) {
       this.selectedKey = e[this.keyField]
       this.value = this.getSelected()
       this.showModal = false
       this.$emit('update:modelValue', this.selectedKey)
     },
     getSelected() {
-      const find:any = this.tableContent?.find((itm:any) => itm[this.keyField] == this.selectedKey)
-      if (find){
+      const find: any = this.tableContent?.find((itm: any) => itm[this.keyField] == this.selectedKey)
+      if (find) {
         return find[this.valueField]
-      }else{
+      } else {
         return ''
       }
     }
   },
+  watch:{
+    tableContent(){
+      this.selectedKey = this.modelValue
+      this.value = this.getSelected()
+    }
+  }
 })
 </script>
 
