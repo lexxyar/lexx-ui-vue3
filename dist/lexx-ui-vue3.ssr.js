@@ -168,7 +168,7 @@ var Size;
       return !!this.$slots.footer;
     }
   }
-});var _withId$j = /*#__PURE__*/vue.withScopeId("data-v-57fb28d8");
+});var _withId$i = /*#__PURE__*/vue.withScopeId("data-v-57fb28d8");
 
 vue.pushScopeId("data-v-57fb28d8");
 
@@ -178,7 +178,7 @@ var _hoisted_1$h = {
 
 vue.popScopeId();
 
-var render$l = /*#__PURE__*/_withId$j(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$l = /*#__PURE__*/_withId$i(function (_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("div", _hoisted_1$h, [vue.createVNode("div", {
     class: ["overflow-hidden shadow-md", _ctx.dark ? 'text-gray-100' : '']
   }, [_ctx.hasHeaderSlot() ? (vue.openBlock(), vue.createBlock("div", {
@@ -227,7 +227,7 @@ script$l.__scopeId = "data-v-57fb28d8";var script$k = vue.defineComponent({
       this.isSidebarOpen = val;
     }
   }
-});var _withId$i = /*#__PURE__*/vue.withScopeId("data-v-57a0903f");
+});var _withId$h = /*#__PURE__*/vue.withScopeId("data-v-57a0903f");
 
 vue.pushScopeId("data-v-57a0903f");
 
@@ -258,7 +258,7 @@ var _hoisted_4$b = {
 
 vue.popScopeId();
 
-var render$k = /*#__PURE__*/_withId$i(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$k = /*#__PURE__*/_withId$h(function (_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("aside", {
     onKeydown: _cache[2] || (_cache[2] = vue.withKeys(function ($event) {
       return _ctx.window.innerWidth <= 1024 ? _ctx.isSidebarOpen = false : '';
@@ -315,7 +315,7 @@ script$k.__scopeId = "data-v-57a0903f";var script$j = vue.defineComponent({
       return !!this.$slots.svg;
     }
   }
-});var _withId$h = /*#__PURE__*/vue.withScopeId("data-v-74b2f265");
+});var _withId$g = /*#__PURE__*/vue.withScopeId("data-v-74b2f265");
 
 vue.pushScopeId("data-v-74b2f265");
 
@@ -335,18 +335,18 @@ var _hoisted_4$a = {
   key: 0,
   class: "flex items-center justify-center text-lg text-gray-400"
 };
-var _hoisted_5$8 = {
+var _hoisted_5$9 = {
   key: 1,
   class: "sidebar-item-caption"
 };
-var _hoisted_6$7 = {
+var _hoisted_6$8 = {
   key: 2,
   class: "flex items-center justify-center text-sm text-gray-500 font-semibold bg-gray-200 h-6 px-2 rounded-full ml-auto"
 };
 
 vue.popScopeId();
 
-var render$j = /*#__PURE__*/_withId$h(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$j = /*#__PURE__*/_withId$g(function (_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = vue.resolveComponent("router-link");
 
   return _ctx.$router && !!_ctx.to ? (vue.openBlock(), vue.createBlock(_component_router_link, {
@@ -354,7 +354,7 @@ var render$j = /*#__PURE__*/_withId$h(function (_ctx, _cache, $props, $setup, $d
     to: _ctx.to,
     class: "flex items-center p-2 text-gray-500 transition-colors rounded-md dark:text-light hover:bg-indigo-100 dark:hover:bg-indigo-600 sidebar-item"
   }, {
-    default: _withId$h(function () {
+    default: _withId$g(function () {
       return [_ctx.hasSvgSlot() ? (vue.openBlock(), vue.createBlock("span", _hoisted_1$f, [vue.renderSlot(_ctx.$slots, "svg")])) : vue.createCommentVNode("", true), !_ctx.hasSvgSlot() ? (vue.openBlock(), vue.createBlock("span", _hoisted_2$b, vue.toDisplayString(_ctx.firstLetter()), 1)) : vue.createCommentVNode("", true), vue.createVNode("span", {
         class: ["text-sm ml-2 sidebar-item-text", {
           'ml-7': _ctx.hasSvgSlot
@@ -368,11 +368,11 @@ var render$j = /*#__PURE__*/_withId$h(function (_ctx, _cache, $props, $setup, $d
     class: ["flex items-center p-2 text-gray-500 transition-colors rounded-md dark:text-light hover:bg-indigo-100 dark:hover:bg-indigo-600 sidebar-item", {
       'text-gray-600 bg-gray-100 active': _ctx.active
     }]
-  }, [_ctx.hasSvgSlot() ? (vue.openBlock(), vue.createBlock("span", _hoisted_4$a, [vue.renderSlot(_ctx.$slots, "svg")])) : vue.createCommentVNode("", true), !_ctx.hasSvgSlot() ? (vue.openBlock(), vue.createBlock("span", _hoisted_5$8, vue.toDisplayString(_ctx.firstLetter()), 1)) : vue.createCommentVNode("", true), vue.createVNode("span", {
+  }, [_ctx.hasSvgSlot() ? (vue.openBlock(), vue.createBlock("span", _hoisted_4$a, [vue.renderSlot(_ctx.$slots, "svg")])) : vue.createCommentVNode("", true), !_ctx.hasSvgSlot() ? (vue.openBlock(), vue.createBlock("span", _hoisted_5$9, vue.toDisplayString(_ctx.firstLetter()), 1)) : vue.createCommentVNode("", true), vue.createVNode("span", {
     class: ["text-sm ml-2 sidebar-item-text", {
       'ml-7': _ctx.hasSvgSlot
     }]
-  }, [vue.renderSlot(_ctx.$slots, "default")], 2), _ctx.count !== 0 ? (vue.openBlock(), vue.createBlock("span", _hoisted_6$7, vue.toDisplayString(_ctx.count), 1)) : vue.createCommentVNode("", true)], 10, ["href"]));
+  }, [vue.renderSlot(_ctx.$slots, "default")], 2), _ctx.count !== 0 ? (vue.openBlock(), vue.createBlock("span", _hoisted_6$8, vue.toDisplayString(_ctx.count), 1)) : vue.createCommentVNode("", true)], 10, ["href"]));
 });script$j.render = render$j;
 script$j.__scopeId = "data-v-74b2f265";var script$i = vue.defineComponent({
   name: "lxSidebarDdItem",
@@ -396,7 +396,7 @@ script$j.__scopeId = "data-v-74b2f265";var script$i = vue.defineComponent({
       return !!this.$slots.svg;
     }
   }
-});var _withId$g = /*#__PURE__*/vue.withScopeId("data-v-78336f59");
+});var _withId$f = /*#__PURE__*/vue.withScopeId("data-v-78336f59");
 
 vue.pushScopeId("data-v-78336f59");
 
@@ -419,14 +419,14 @@ var _hoisted_4$9 = /*#__PURE__*/vue.createVNode("path", {
   d: "M19 9l-7 7-7-7"
 }, null, -1);
 
-var _hoisted_5$7 = {
+var _hoisted_5$8 = {
   key: 0,
   class: "mt-2 space-y-2 sidebar-submenu"
 };
 
 vue.popScopeId();
 
-var render$i = /*#__PURE__*/_withId$g(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$i = /*#__PURE__*/_withId$f(function (_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock(vue.Fragment, null, [vue.createVNode("a", {
     href: "#",
     onClick: _cache[1] || (_cache[1] = function ($event) {
@@ -445,7 +445,7 @@ var render$i = /*#__PURE__*/_withId$g(function (_ctx, _cache, $props, $setup, $d
     fill: "none",
     viewBox: "0 0 24 24",
     stroke: "currentColor"
-  }, [_hoisted_4$9], 2))])], 2), _ctx.expanded ? (vue.openBlock(), vue.createBlock("div", _hoisted_5$7, [vue.renderSlot(_ctx.$slots, "submenu")])) : vue.createCommentVNode("", true)], 64);
+  }, [_hoisted_4$9], 2))])], 2), _ctx.expanded ? (vue.openBlock(), vue.createBlock("div", _hoisted_5$8, [vue.renderSlot(_ctx.$slots, "submenu")])) : vue.createCommentVNode("", true)], 64);
 });script$i.render = render$i;
 script$i.__scopeId = "data-v-78336f59";var script$h = vue.defineComponent({
   name: "lxNavbar",
@@ -480,7 +480,7 @@ script$i.__scopeId = "data-v-78336f59";var script$h = vue.defineComponent({
       this.isSidebarOpen = val;
     }
   }
-});var _withId$f = /*#__PURE__*/vue.withScopeId("data-v-01efeae6");
+});var _withId$e = /*#__PURE__*/vue.withScopeId("data-v-01efeae6");
 
 vue.pushScopeId("data-v-01efeae6");
 
@@ -501,17 +501,17 @@ var _hoisted_4$8 = /*#__PURE__*/vue.createVNode("path", {
   d: "M13 5l7 7-7 7M5 5l7 7-7 7"
 }, null, -1);
 
-var _hoisted_5$6 = {
+var _hoisted_5$7 = {
   key: 0,
   class: "p-2 text-xl font-semibold tracking-wider uppercase"
 };
-var _hoisted_6$6 = {
+var _hoisted_6$7 = {
   class: "relative flex items-center space-x-3"
 };
 
 vue.popScopeId();
 
-var render$h = /*#__PURE__*/_withId$f(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$h = /*#__PURE__*/_withId$e(function (_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("header", _hoisted_1$d, [vue.createVNode("div", _hoisted_2$9, [vue.createVNode("div", _hoisted_3$8, [vue.createVNode("button", {
     onClick: _cache[1] || (_cache[1] = function () {
       return _ctx.onToggleSidebar && _ctx.onToggleSidebar.apply(_ctx, arguments);
@@ -525,7 +525,7 @@ var render$h = /*#__PURE__*/_withId$f(function (_ctx, _cache, $props, $setup, $d
     fill: "none",
     viewBox: "0 0 24 24",
     stroke: "currentColor"
-  }, [_hoisted_4$8], 2))]), _ctx.hasBrandSlot() ? (vue.openBlock(), vue.createBlock("span", _hoisted_5$6, [vue.renderSlot(_ctx.$slots, "brand")])) : vue.createCommentVNode("", true), vue.renderSlot(_ctx.$slots, "left")]), vue.createVNode("div", _hoisted_6$6, [vue.renderSlot(_ctx.$slots, "default")])])]);
+  }, [_hoisted_4$8], 2))]), _ctx.hasBrandSlot() ? (vue.openBlock(), vue.createBlock("span", _hoisted_5$7, [vue.renderSlot(_ctx.$slots, "brand")])) : vue.createCommentVNode("", true), vue.renderSlot(_ctx.$slots, "left")]), vue.createVNode("div", _hoisted_6$7, [vue.renderSlot(_ctx.$slots, "default")])])]);
 });script$h.render = render$h;
 script$h.__scopeId = "data-v-01efeae6";var script$g = vue.defineComponent({
   name: "lxNavbarItem",
@@ -539,9 +539,9 @@ script$h.__scopeId = "data-v-01efeae6";var script$g = vue.defineComponent({
       default: ''
     }
   }
-});var _withId$e = /*#__PURE__*/vue.withScopeId("data-v-344cdbda");
+});var _withId$d = /*#__PURE__*/vue.withScopeId("data-v-344cdbda");
 
-var render$g = /*#__PURE__*/_withId$e(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$g = /*#__PURE__*/_withId$d(function (_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = vue.resolveComponent("router-link");
 
   return _ctx.$router && !!_ctx.to ? (vue.openBlock(), vue.createBlock(_component_router_link, {
@@ -549,7 +549,7 @@ var render$g = /*#__PURE__*/_withId$e(function (_ctx, _cache, $props, $setup, $d
     to: _ctx.to,
     class: "flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal no-underline flex items-center hover:bg-gray-200"
   }, {
-    default: _withId$e(function () {
+    default: _withId$d(function () {
       return [vue.renderSlot(_ctx.$slots, "default")];
     }),
     _: 3
@@ -561,7 +561,7 @@ var render$g = /*#__PURE__*/_withId$e(function (_ctx, _cache, $props, $setup, $d
 });script$g.render = render$g;
 script$g.__scopeId = "data-v-344cdbda";var script$f = vue.defineComponent({
   name: "lxNavbarButton"
-});var _withId$d = /*#__PURE__*/vue.withScopeId("data-v-2384de5e");
+});var _withId$c = /*#__PURE__*/vue.withScopeId("data-v-2384de5e");
 
 vue.pushScopeId("data-v-2384de5e");
 
@@ -571,7 +571,7 @@ var _hoisted_1$c = {
 
 vue.popScopeId();
 
-var render$f = /*#__PURE__*/_withId$d(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$f = /*#__PURE__*/_withId$c(function (_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("button", _hoisted_1$c, [vue.renderSlot(_ctx.$slots, "default")]);
 });script$f.render = render$f;
 script$f.__scopeId = "data-v-2384de5e";var script$e = vue.defineComponent({
@@ -585,9 +585,9 @@ script$f.__scopeId = "data-v-2384de5e";var script$e = vue.defineComponent({
   data: function data() {
     return {};
   }
-});var _withId$c = /*#__PURE__*/vue.withScopeId("data-v-12c1e44a");
+});var _withId$b = /*#__PURE__*/vue.withScopeId("data-v-12c1e44a");
 
-var render$e = /*#__PURE__*/_withId$c(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$e = /*#__PURE__*/_withId$b(function (_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("div", {
     class: ["absolute top-full py-2 w-48 bg-white rounded-md shadow-xl z-20 lx-dropdown-menu", _ctx.right ? 'right-0' : 'left-0'],
     role: "dropdown-menu"
@@ -604,9 +604,9 @@ script$e.__scopeId = "data-v-12c1e44a";var script$d = vue.defineComponent({
       default: ''
     }
   }
-});var _withId$b = /*#__PURE__*/vue.withScopeId("data-v-683dd364");
+});var _withId$a = /*#__PURE__*/vue.withScopeId("data-v-683dd364");
 
-var render$d = /*#__PURE__*/_withId$b(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$d = /*#__PURE__*/_withId$a(function (_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = vue.resolveComponent("router-link");
 
   return !!_ctx.$router && _ctx.to ? (vue.openBlock(), vue.createBlock(_component_router_link, {
@@ -614,7 +614,7 @@ var render$d = /*#__PURE__*/_withId$b(function (_ctx, _cache, $props, $setup, $d
     class: "block px-4 py-2 text-sm text-left capitalize text-gray-700 hover:bg-blue-500 hover:text-white",
     to: _ctx.to
   }, {
-    default: _withId$b(function () {
+    default: _withId$a(function () {
       return [vue.renderSlot(_ctx.$slots, "default")];
     }),
     _: 3
@@ -667,11 +667,11 @@ var _hoisted_4$7 = {
   key: 0,
   class: "px-3 py-3 text-sm"
 };
-var _hoisted_5$5 = {
+var _hoisted_5$6 = {
   key: 0,
   class: "px-3 py-3 text-sm"
 };
-var _hoisted_6$5 = {
+var _hoisted_6$6 = {
   key: 1,
   class: "px-3 py-3 text-sm"
 };
@@ -700,10 +700,10 @@ function render$c(_ctx, _cache, $props, $setup, $data, $options) {
         return itm.checked = $event;
       }
     }, null, 8, ["data-id", "onUpdate:modelValue"]), [[vue.vModelCheckbox, itm.checked]])])) : vue.createCommentVNode("", true), (vue.openBlock(true), vue.createBlock(vue.Fragment, null, vue.renderList(_ctx.header, function (h) {
-      return vue.openBlock(), vue.createBlock(vue.Fragment, null, [typeof _ctx.$slots[h.key] !== 'undefined' ? (vue.openBlock(), vue.createBlock("td", _hoisted_5$5, [vue.renderSlot(_ctx.$slots, h.key, {
+      return vue.openBlock(), vue.createBlock(vue.Fragment, null, [typeof _ctx.$slots[h.key] !== 'undefined' ? (vue.openBlock(), vue.createBlock("td", _hoisted_5$6, [vue.renderSlot(_ctx.$slots, h.key, {
         field: h,
         item: itm
-      })])) : (vue.openBlock(), vue.createBlock("td", _hoisted_6$5, vue.toDisplayString(itm[h.key]), 1))], 64);
+      })])) : (vue.openBlock(), vue.createBlock("td", _hoisted_6$6, vue.toDisplayString(itm[h.key]), 1))], 64);
     }), 256))], 8, ["onClick"]);
   }), 256)) : vue.createCommentVNode("", true)])]);
 }script$c.render = render$c;var script$b = vue.defineComponent({
@@ -767,7 +767,7 @@ function render$c(_ctx, _cache, $props, $setup, $data, $options) {
       this.currentPageSync = newVal;
     }
   }
-});var _withId$a = /*#__PURE__*/vue.withScopeId("data-v-724bff53");
+});var _withId$9 = /*#__PURE__*/vue.withScopeId("data-v-724bff53");
 
 vue.pushScopeId("data-v-724bff53");
 
@@ -777,7 +777,7 @@ var _hoisted_1$a = {
 
 vue.popScopeId();
 
-var render$b = /*#__PURE__*/_withId$a(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$b = /*#__PURE__*/_withId$9(function (_ctx, _cache, $props, $setup, $data, $options) {
   var _component_lx_button = vue.resolveComponent("lx-button");
 
   return vue.openBlock(), vue.createBlock("div", _hoisted_1$a, [vue.createVNode(_component_lx_button, {
@@ -786,7 +786,7 @@ var render$b = /*#__PURE__*/_withId$a(function (_ctx, _cache, $props, $setup, $d
       return _ctx.onChangePage(-1);
     })
   }, {
-    default: _withId$a(function () {
+    default: _withId$9(function () {
       return [vue.createTextVNode(vue.toDisplayString(_ctx.prevButtonText), 1)];
     }),
     _: 1
@@ -797,7 +797,7 @@ var render$b = /*#__PURE__*/_withId$a(function (_ctx, _cache, $props, $setup, $d
         return _ctx.onPageClick(i);
       }
     }, {
-      default: _withId$a(function () {
+      default: _withId$9(function () {
         return [vue.createTextVNode(vue.toDisplayString(i), 1)];
       }),
       _: 2
@@ -808,7 +808,7 @@ var render$b = /*#__PURE__*/_withId$a(function (_ctx, _cache, $props, $setup, $d
       return _ctx.onChangePage(1);
     })
   }, {
-    default: _withId$a(function () {
+    default: _withId$9(function () {
       return [vue.createTextVNode(vue.toDisplayString(_ctx.nextButtonText), 1)];
     }),
     _: 1
@@ -816,12 +816,16 @@ var render$b = /*#__PURE__*/_withId$a(function (_ctx, _cache, $props, $setup, $d
 });script$b.render = render$b;
 script$b.__scopeId = "data-v-724bff53";var script$a = vue.defineComponent({
   name: "lxInput",
-  emits: ['update:modelValue', 'input'],
+  emits: ['update:modelValue', 'input', 'onclear'],
   props: {
     modelValue: String,
     readonly: {
       type: Boolean,
       default: false
+    },
+    clearButton: {
+      type: Boolean,
+      default: true
     },
     commitTimout: {
       type: Number,
@@ -925,35 +929,38 @@ script$b.__scopeId = "data-v-724bff53";var script$a = vue.defineComponent({
     },
     genUid: function genUid() {
       return '_' + Math.random().toString(36).substr(2, 9);
+    },
+    onClearClick: function onClearClick() {
+      this.$emit('onclear');
     }
   }
-});var _withId$9 = /*#__PURE__*/vue.withScopeId("data-v-496763d2");
-
-vue.pushScopeId("data-v-496763d2");
-
-var _hoisted_1$9 = {
+});var _hoisted_1$9 = {
   class: "flex flex-col"
 };
 var _hoisted_2$7 = {
-  class: "input-container flex"
+  class: "input-container flex relative"
 };
 var _hoisted_3$6 = {
   key: 0,
   class: "shadow-sm border rounded rounded-r-none border-r-0 flex-none py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline input-extention prepend"
 };
 var _hoisted_4$6 = {
+  class: "relative w-full lx-input-clear"
+};
+var _hoisted_5$5 = {
+  key: 0,
+  class: "lx-input-clear-button mb-2 mt-1"
+};
+var _hoisted_6$5 = {
   key: 1,
   class: "shadow-sm border rounded rounded-l-none border-l-0 flex-none py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline input-extention append"
 };
-
-vue.popScopeId();
-
-var render$a = /*#__PURE__*/_withId$9(function (_ctx, _cache, $props, $setup, $data, $options) {
+function render$a(_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("div", _hoisted_1$9, [_ctx.emptyLabel || _ctx.label ? (vue.openBlock(), vue.createBlock("label", {
     key: 0,
     for: _ctx.uid,
     class: "text-md"
-  }, vue.toDisplayString(_ctx.label), 9, ["for"])) : vue.createCommentVNode("", true), vue.createVNode("div", _hoisted_2$7, [_ctx.hasPrepend ? (vue.openBlock(), vue.createBlock("div", _hoisted_3$6, [vue.renderSlot(_ctx.$slots, "prepend")])) : vue.createCommentVNode("", true), vue.createVNode("input", {
+  }, vue.toDisplayString(_ctx.label), 9, ["for"])) : vue.createCommentVNode("", true), vue.createVNode("div", _hoisted_2$7, [_ctx.hasPrepend ? (vue.openBlock(), vue.createBlock("div", _hoisted_3$6, [vue.renderSlot(_ctx.$slots, "prepend")])) : vue.createCommentVNode("", true), vue.createVNode("div", _hoisted_4$6, [vue.createVNode("input", {
     type: _ctx.type,
     id: _ctx.uid,
     placeholder: _ctx.placeholder,
@@ -962,13 +969,16 @@ var render$a = /*#__PURE__*/_withId$9(function (_ctx, _cache, $props, $setup, $d
       return _ctx.onInput($event.target.value);
     }),
     value: _ctx.modelValue,
-    class: ["shadow-sm border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline", {
+    class: ["shadow-sm border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline lx-input", {
       'rounded-l-none': _ctx.hasPrepend,
       'rounded-r-none': _ctx.hasAppend
     }]
-  }, null, 42, ["type", "id", "placeholder", "readonly", "value"]), _ctx.hasAppend ? (vue.openBlock(), vue.createBlock("div", _hoisted_4$6, [vue.renderSlot(_ctx.$slots, "append")])) : vue.createCommentVNode("", true)])]);
-});script$a.render = render$a;
-script$a.__scopeId = "data-v-496763d2";var script$9 = vue.defineComponent({
+  }, null, 42, ["type", "id", "placeholder", "readonly", "value"]), _ctx.clearButton ? (vue.openBlock(), vue.createBlock("div", _hoisted_5$5, [vue.createVNode("span", {
+    onClick: _cache[2] || (_cache[2] = function () {
+      return _ctx.onClearClick && _ctx.onClearClick.apply(_ctx, arguments);
+    })
+  }, "×")])) : vue.createCommentVNode("", true)]), _ctx.hasAppend ? (vue.openBlock(), vue.createBlock("div", _hoisted_6$5, [vue.renderSlot(_ctx.$slots, "append")])) : vue.createCommentVNode("", true)])]);
+}script$a.render = render$a;var script$9 = vue.defineComponent({
   name: "lxSelectInputCheckmark"
 });var _withId$8 = /*#__PURE__*/vue.withScopeId("data-v-700b42a7");
 
@@ -2005,7 +2015,7 @@ script$1.__scopeId = "data-v-92ffdfd4";var script = vue.defineComponent({
 })], -1);
 
 var _hoisted_2 = {
-  class: "md:w-2/3 sm:w-full rounded-lg shadow-lg bg-white my-3 max-h-screen"
+  class: "md:w-2/3 sm:w-full rounded-lg shadow-lg bg-white my-3 max-h-90screen"
 };
 var _hoisted_3 = {
   class: "flex justify-between border-b border-gray-100 px-5 py-4"
@@ -2028,7 +2038,7 @@ var _hoisted_6 = /*#__PURE__*/vue.createVNode("svg", {
 })], -1);
 
 var _hoisted_7 = {
-  class: "px-10 py-5 text-gray-600"
+  class: "px-10 py-5 text-gray-600 max-h-70screen overflow-auto"
 };
 var _hoisted_8 = {
   class: "px-5 py-4 flex justify-end"

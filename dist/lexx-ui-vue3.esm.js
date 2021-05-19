@@ -127,7 +127,7 @@ var script$l = defineComponent({
   }
 });
 
-const _withId$j = /*#__PURE__*/withScopeId("data-v-57fb28d8");
+const _withId$i = /*#__PURE__*/withScopeId("data-v-57fb28d8");
 
 pushScopeId("data-v-57fb28d8");
 
@@ -137,7 +137,7 @@ const _hoisted_1$h = {
 
 popScopeId();
 
-const render$l = /*#__PURE__*/_withId$j((_ctx, _cache, $props, $setup, $data, $options) => {
+const render$l = /*#__PURE__*/_withId$i((_ctx, _cache, $props, $setup, $data, $options) => {
   return openBlock(), createBlock("div", _hoisted_1$h, [createVNode("div", {
     class: ["overflow-hidden shadow-md", _ctx.dark ? 'text-gray-100' : '']
   }, [_ctx.hasHeaderSlot() ? (openBlock(), createBlock("div", {
@@ -198,7 +198,7 @@ var script$k = defineComponent({
   }
 });
 
-const _withId$i = /*#__PURE__*/withScopeId("data-v-57a0903f");
+const _withId$h = /*#__PURE__*/withScopeId("data-v-57a0903f");
 
 pushScopeId("data-v-57a0903f");
 
@@ -229,7 +229,7 @@ const _hoisted_4$b = {
 
 popScopeId();
 
-const render$k = /*#__PURE__*/_withId$i((_ctx, _cache, $props, $setup, $data, $options) => {
+const render$k = /*#__PURE__*/_withId$h((_ctx, _cache, $props, $setup, $data, $options) => {
   return openBlock(), createBlock("aside", {
     onKeydown: _cache[2] || (_cache[2] = withKeys($event => _ctx.window.innerWidth <= 1024 ? _ctx.isSidebarOpen = false : '', ["escape"])),
     tabindex: "-1",
@@ -290,7 +290,7 @@ var script$j = defineComponent({
   }
 });
 
-const _withId$h = /*#__PURE__*/withScopeId("data-v-74b2f265");
+const _withId$g = /*#__PURE__*/withScopeId("data-v-74b2f265");
 
 pushScopeId("data-v-74b2f265");
 
@@ -310,18 +310,18 @@ const _hoisted_4$a = {
   key: 0,
   class: "flex items-center justify-center text-lg text-gray-400"
 };
-const _hoisted_5$8 = {
+const _hoisted_5$9 = {
   key: 1,
   class: "sidebar-item-caption"
 };
-const _hoisted_6$7 = {
+const _hoisted_6$8 = {
   key: 2,
   class: "flex items-center justify-center text-sm text-gray-500 font-semibold bg-gray-200 h-6 px-2 rounded-full ml-auto"
 };
 
 popScopeId();
 
-const render$j = /*#__PURE__*/_withId$h((_ctx, _cache, $props, $setup, $data, $options) => {
+const render$j = /*#__PURE__*/_withId$g((_ctx, _cache, $props, $setup, $data, $options) => {
   const _component_router_link = resolveComponent("router-link");
 
   return _ctx.$router && !!_ctx.to ? (openBlock(), createBlock(_component_router_link, {
@@ -329,7 +329,7 @@ const render$j = /*#__PURE__*/_withId$h((_ctx, _cache, $props, $setup, $data, $o
     to: _ctx.to,
     class: "flex items-center p-2 text-gray-500 transition-colors rounded-md dark:text-light hover:bg-indigo-100 dark:hover:bg-indigo-600 sidebar-item"
   }, {
-    default: _withId$h(() => [_ctx.hasSvgSlot() ? (openBlock(), createBlock("span", _hoisted_1$f, [renderSlot(_ctx.$slots, "svg")])) : createCommentVNode("", true), !_ctx.hasSvgSlot() ? (openBlock(), createBlock("span", _hoisted_2$b, toDisplayString(_ctx.firstLetter()), 1)) : createCommentVNode("", true), createVNode("span", {
+    default: _withId$g(() => [_ctx.hasSvgSlot() ? (openBlock(), createBlock("span", _hoisted_1$f, [renderSlot(_ctx.$slots, "svg")])) : createCommentVNode("", true), !_ctx.hasSvgSlot() ? (openBlock(), createBlock("span", _hoisted_2$b, toDisplayString(_ctx.firstLetter()), 1)) : createCommentVNode("", true), createVNode("span", {
       class: ["text-sm ml-2 sidebar-item-text", {
         'ml-7': _ctx.hasSvgSlot
       }]
@@ -341,11 +341,11 @@ const render$j = /*#__PURE__*/_withId$h((_ctx, _cache, $props, $setup, $data, $o
     class: ["flex items-center p-2 text-gray-500 transition-colors rounded-md dark:text-light hover:bg-indigo-100 dark:hover:bg-indigo-600 sidebar-item", {
       'text-gray-600 bg-gray-100 active': _ctx.active
     }]
-  }, [_ctx.hasSvgSlot() ? (openBlock(), createBlock("span", _hoisted_4$a, [renderSlot(_ctx.$slots, "svg")])) : createCommentVNode("", true), !_ctx.hasSvgSlot() ? (openBlock(), createBlock("span", _hoisted_5$8, toDisplayString(_ctx.firstLetter()), 1)) : createCommentVNode("", true), createVNode("span", {
+  }, [_ctx.hasSvgSlot() ? (openBlock(), createBlock("span", _hoisted_4$a, [renderSlot(_ctx.$slots, "svg")])) : createCommentVNode("", true), !_ctx.hasSvgSlot() ? (openBlock(), createBlock("span", _hoisted_5$9, toDisplayString(_ctx.firstLetter()), 1)) : createCommentVNode("", true), createVNode("span", {
     class: ["text-sm ml-2 sidebar-item-text", {
       'ml-7': _ctx.hasSvgSlot
     }]
-  }, [renderSlot(_ctx.$slots, "default")], 2), _ctx.count !== 0 ? (openBlock(), createBlock("span", _hoisted_6$7, toDisplayString(_ctx.count), 1)) : createCommentVNode("", true)], 10, ["href"]));
+  }, [renderSlot(_ctx.$slots, "default")], 2), _ctx.count !== 0 ? (openBlock(), createBlock("span", _hoisted_6$8, toDisplayString(_ctx.count), 1)) : createCommentVNode("", true)], 10, ["href"]));
 });
 
 script$j.render = render$j;
@@ -378,7 +378,7 @@ var script$i = defineComponent({
   }
 });
 
-const _withId$g = /*#__PURE__*/withScopeId("data-v-78336f59");
+const _withId$f = /*#__PURE__*/withScopeId("data-v-78336f59");
 
 pushScopeId("data-v-78336f59");
 
@@ -401,14 +401,14 @@ const _hoisted_4$9 = /*#__PURE__*/createVNode("path", {
   d: "M19 9l-7 7-7-7"
 }, null, -1);
 
-const _hoisted_5$7 = {
+const _hoisted_5$8 = {
   key: 0,
   class: "mt-2 space-y-2 sidebar-submenu"
 };
 
 popScopeId();
 
-const render$i = /*#__PURE__*/_withId$g((_ctx, _cache, $props, $setup, $data, $options) => {
+const render$i = /*#__PURE__*/_withId$f((_ctx, _cache, $props, $setup, $data, $options) => {
   return openBlock(), createBlock(Fragment, null, [createVNode("a", {
     href: "#",
     onClick: _cache[1] || (_cache[1] = $event => _ctx.expanded = !_ctx.expanded),
@@ -425,7 +425,7 @@ const render$i = /*#__PURE__*/_withId$g((_ctx, _cache, $props, $setup, $data, $o
     fill: "none",
     viewBox: "0 0 24 24",
     stroke: "currentColor"
-  }, [_hoisted_4$9], 2))])], 2), _ctx.expanded ? (openBlock(), createBlock("div", _hoisted_5$7, [renderSlot(_ctx.$slots, "submenu")])) : createCommentVNode("", true)], 64);
+  }, [_hoisted_4$9], 2))])], 2), _ctx.expanded ? (openBlock(), createBlock("div", _hoisted_5$8, [renderSlot(_ctx.$slots, "submenu")])) : createCommentVNode("", true)], 64);
 });
 
 script$i.render = render$i;
@@ -472,7 +472,7 @@ var script$h = defineComponent({
   }
 });
 
-const _withId$f = /*#__PURE__*/withScopeId("data-v-01efeae6");
+const _withId$e = /*#__PURE__*/withScopeId("data-v-01efeae6");
 
 pushScopeId("data-v-01efeae6");
 
@@ -493,17 +493,17 @@ const _hoisted_4$8 = /*#__PURE__*/createVNode("path", {
   d: "M13 5l7 7-7 7M5 5l7 7-7 7"
 }, null, -1);
 
-const _hoisted_5$6 = {
+const _hoisted_5$7 = {
   key: 0,
   class: "p-2 text-xl font-semibold tracking-wider uppercase"
 };
-const _hoisted_6$6 = {
+const _hoisted_6$7 = {
   class: "relative flex items-center space-x-3"
 };
 
 popScopeId();
 
-const render$h = /*#__PURE__*/_withId$f((_ctx, _cache, $props, $setup, $data, $options) => {
+const render$h = /*#__PURE__*/_withId$e((_ctx, _cache, $props, $setup, $data, $options) => {
   return openBlock(), createBlock("header", _hoisted_1$d, [createVNode("div", _hoisted_2$9, [createVNode("div", _hoisted_3$8, [createVNode("button", {
     onClick: _cache[1] || (_cache[1] = (...args) => _ctx.onToggleSidebar && _ctx.onToggleSidebar(...args)),
     class: "p-2 rounded-md focus:outline-none focus:ring"
@@ -515,7 +515,7 @@ const render$h = /*#__PURE__*/_withId$f((_ctx, _cache, $props, $setup, $data, $o
     fill: "none",
     viewBox: "0 0 24 24",
     stroke: "currentColor"
-  }, [_hoisted_4$8], 2))]), _ctx.hasBrandSlot() ? (openBlock(), createBlock("span", _hoisted_5$6, [renderSlot(_ctx.$slots, "brand")])) : createCommentVNode("", true), renderSlot(_ctx.$slots, "left")]), createVNode("div", _hoisted_6$6, [renderSlot(_ctx.$slots, "default")])])]);
+  }, [_hoisted_4$8], 2))]), _ctx.hasBrandSlot() ? (openBlock(), createBlock("span", _hoisted_5$7, [renderSlot(_ctx.$slots, "brand")])) : createCommentVNode("", true), renderSlot(_ctx.$slots, "left")]), createVNode("div", _hoisted_6$7, [renderSlot(_ctx.$slots, "default")])])]);
 });
 
 script$h.render = render$h;
@@ -535,9 +535,9 @@ var script$g = defineComponent({
   }
 });
 
-const _withId$e = /*#__PURE__*/withScopeId("data-v-344cdbda");
+const _withId$d = /*#__PURE__*/withScopeId("data-v-344cdbda");
 
-const render$g = /*#__PURE__*/_withId$e((_ctx, _cache, $props, $setup, $data, $options) => {
+const render$g = /*#__PURE__*/_withId$d((_ctx, _cache, $props, $setup, $data, $options) => {
   const _component_router_link = resolveComponent("router-link");
 
   return _ctx.$router && !!_ctx.to ? (openBlock(), createBlock(_component_router_link, {
@@ -545,7 +545,7 @@ const render$g = /*#__PURE__*/_withId$e((_ctx, _cache, $props, $setup, $data, $o
     to: _ctx.to,
     class: "flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal no-underline flex items-center hover:bg-gray-200"
   }, {
-    default: _withId$e(() => [renderSlot(_ctx.$slots, "default")]),
+    default: _withId$d(() => [renderSlot(_ctx.$slots, "default")]),
     _: 3
   }, 8, ["to"])) : (openBlock(), createBlock("a", {
     key: 1,
@@ -561,7 +561,7 @@ var script$f = defineComponent({
   name: "lxNavbarButton"
 });
 
-const _withId$d = /*#__PURE__*/withScopeId("data-v-2384de5e");
+const _withId$c = /*#__PURE__*/withScopeId("data-v-2384de5e");
 
 pushScopeId("data-v-2384de5e");
 
@@ -571,7 +571,7 @@ const _hoisted_1$c = {
 
 popScopeId();
 
-const render$f = /*#__PURE__*/_withId$d((_ctx, _cache, $props, $setup, $data, $options) => {
+const render$f = /*#__PURE__*/_withId$c((_ctx, _cache, $props, $setup, $data, $options) => {
   return openBlock(), createBlock("button", _hoisted_1$c, [renderSlot(_ctx.$slots, "default")]);
 });
 
@@ -593,9 +593,9 @@ var script$e = defineComponent({
 
 });
 
-const _withId$c = /*#__PURE__*/withScopeId("data-v-12c1e44a");
+const _withId$b = /*#__PURE__*/withScopeId("data-v-12c1e44a");
 
-const render$e = /*#__PURE__*/_withId$c((_ctx, _cache, $props, $setup, $data, $options) => {
+const render$e = /*#__PURE__*/_withId$b((_ctx, _cache, $props, $setup, $data, $options) => {
   return openBlock(), createBlock("div", {
     class: ["absolute top-full py-2 w-48 bg-white rounded-md shadow-xl z-20 lx-dropdown-menu", _ctx.right ? 'right-0' : 'left-0'],
     role: "dropdown-menu"
@@ -618,9 +618,9 @@ var script$d = defineComponent({
   }
 });
 
-const _withId$b = /*#__PURE__*/withScopeId("data-v-683dd364");
+const _withId$a = /*#__PURE__*/withScopeId("data-v-683dd364");
 
-const render$d = /*#__PURE__*/_withId$b((_ctx, _cache, $props, $setup, $data, $options) => {
+const render$d = /*#__PURE__*/_withId$a((_ctx, _cache, $props, $setup, $data, $options) => {
   const _component_router_link = resolveComponent("router-link");
 
   return !!_ctx.$router && _ctx.to ? (openBlock(), createBlock(_component_router_link, {
@@ -628,7 +628,7 @@ const render$d = /*#__PURE__*/_withId$b((_ctx, _cache, $props, $setup, $data, $o
     class: "block px-4 py-2 text-sm text-left capitalize text-gray-700 hover:bg-blue-500 hover:text-white",
     to: _ctx.to
   }, {
-    default: _withId$b(() => [renderSlot(_ctx.$slots, "default")]),
+    default: _withId$a(() => [renderSlot(_ctx.$slots, "default")]),
     _: 3
   }, 8, ["to"])) : (openBlock(), createBlock("a", {
     key: 1,
@@ -686,11 +686,11 @@ const _hoisted_4$7 = {
   key: 0,
   class: "px-3 py-3 text-sm"
 };
-const _hoisted_5$5 = {
+const _hoisted_5$6 = {
   key: 0,
   class: "px-3 py-3 text-sm"
 };
-const _hoisted_6$5 = {
+const _hoisted_6$6 = {
   key: 1,
   class: "px-3 py-3 text-sm"
 };
@@ -713,10 +713,10 @@ function render$c(_ctx, _cache, $props, $setup, $data, $options) {
       "data-id": itm.id,
       "onUpdate:modelValue": $event => itm.checked = $event
     }, null, 8, ["data-id", "onUpdate:modelValue"]), [[vModelCheckbox, itm.checked]])])) : createCommentVNode("", true), (openBlock(true), createBlock(Fragment, null, renderList(_ctx.header, h => {
-      return openBlock(), createBlock(Fragment, null, [typeof _ctx.$slots[h.key] !== 'undefined' ? (openBlock(), createBlock("td", _hoisted_5$5, [renderSlot(_ctx.$slots, h.key, {
+      return openBlock(), createBlock(Fragment, null, [typeof _ctx.$slots[h.key] !== 'undefined' ? (openBlock(), createBlock("td", _hoisted_5$6, [renderSlot(_ctx.$slots, h.key, {
         field: h,
         item: itm
-      })])) : (openBlock(), createBlock("td", _hoisted_6$5, toDisplayString(itm[h.key]), 1))], 64);
+      })])) : (openBlock(), createBlock("td", _hoisted_6$6, toDisplayString(itm[h.key]), 1))], 64);
     }), 256))], 8, ["onClick"]);
   }), 256)) : createCommentVNode("", true)])]);
 }
@@ -794,7 +794,7 @@ var script$b = defineComponent({
   }
 });
 
-const _withId$a = /*#__PURE__*/withScopeId("data-v-724bff53");
+const _withId$9 = /*#__PURE__*/withScopeId("data-v-724bff53");
 
 pushScopeId("data-v-724bff53");
 
@@ -804,28 +804,28 @@ const _hoisted_1$a = {
 
 popScopeId();
 
-const render$b = /*#__PURE__*/_withId$a((_ctx, _cache, $props, $setup, $data, $options) => {
+const render$b = /*#__PURE__*/_withId$9((_ctx, _cache, $props, $setup, $data, $options) => {
   const _component_lx_button = resolveComponent("lx-button");
 
   return openBlock(), createBlock("div", _hoisted_1$a, [createVNode(_component_lx_button, {
     disabled: !_ctx.canPrev(),
     onClick: _cache[1] || (_cache[1] = $event => _ctx.onChangePage(-1))
   }, {
-    default: _withId$a(() => [createTextVNode(toDisplayString(_ctx.prevButtonText), 1)]),
+    default: _withId$9(() => [createTextVNode(toDisplayString(_ctx.prevButtonText), 1)]),
     _: 1
   }, 8, ["disabled"]), (openBlock(true), createBlock(Fragment, null, renderList(_ctx.pageCount, i => {
     return openBlock(), createBlock(_component_lx_button, {
       disabled: i === _ctx.currentPageSync,
       onClick: $event => _ctx.onPageClick(i)
     }, {
-      default: _withId$a(() => [createTextVNode(toDisplayString(i), 1)]),
+      default: _withId$9(() => [createTextVNode(toDisplayString(i), 1)]),
       _: 2
     }, 1032, ["disabled", "onClick"]);
   }), 256)), createVNode(_component_lx_button, {
     disabled: !_ctx.canNext(),
     onClick: _cache[2] || (_cache[2] = $event => _ctx.onChangePage(1))
   }, {
-    default: _withId$a(() => [createTextVNode(toDisplayString(_ctx.nextButtonText), 1)]),
+    default: _withId$9(() => [createTextVNode(toDisplayString(_ctx.nextButtonText), 1)]),
     _: 1
   }, 8, ["disabled"])]);
 });
@@ -835,12 +835,16 @@ script$b.__scopeId = "data-v-724bff53";
 
 var script$a = defineComponent({
   name: "lxInput",
-  emits: ['update:modelValue', 'input'],
+  emits: ['update:modelValue', 'input', 'onclear'],
   props: {
     modelValue: String,
     readonly: {
       type: Boolean,
       default: false
+    },
+    clearButton: {
+      type: Boolean,
+      default: true
     },
     commitTimout: {
       type: Number,
@@ -952,53 +956,58 @@ var script$a = defineComponent({
 
     genUid() {
       return '_' + Math.random().toString(36).substr(2, 9);
+    },
+
+    onClearClick() {
+      this.$emit('onclear');
     }
 
   }
 });
 
-const _withId$9 = /*#__PURE__*/withScopeId("data-v-496763d2");
-
-pushScopeId("data-v-496763d2");
-
 const _hoisted_1$9 = {
   class: "flex flex-col"
 };
 const _hoisted_2$7 = {
-  class: "input-container flex"
+  class: "input-container flex relative"
 };
 const _hoisted_3$6 = {
   key: 0,
   class: "shadow-sm border rounded rounded-r-none border-r-0 flex-none py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline input-extention prepend"
 };
 const _hoisted_4$6 = {
+  class: "relative w-full lx-input-clear"
+};
+const _hoisted_5$5 = {
+  key: 0,
+  class: "lx-input-clear-button mb-2 mt-1"
+};
+const _hoisted_6$5 = {
   key: 1,
   class: "shadow-sm border rounded rounded-l-none border-l-0 flex-none py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline input-extention append"
 };
-
-popScopeId();
-
-const render$a = /*#__PURE__*/_withId$9((_ctx, _cache, $props, $setup, $data, $options) => {
+function render$a(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createBlock("div", _hoisted_1$9, [_ctx.emptyLabel || _ctx.label ? (openBlock(), createBlock("label", {
     key: 0,
     for: _ctx.uid,
     class: "text-md"
-  }, toDisplayString(_ctx.label), 9, ["for"])) : createCommentVNode("", true), createVNode("div", _hoisted_2$7, [_ctx.hasPrepend ? (openBlock(), createBlock("div", _hoisted_3$6, [renderSlot(_ctx.$slots, "prepend")])) : createCommentVNode("", true), createVNode("input", {
+  }, toDisplayString(_ctx.label), 9, ["for"])) : createCommentVNode("", true), createVNode("div", _hoisted_2$7, [_ctx.hasPrepend ? (openBlock(), createBlock("div", _hoisted_3$6, [renderSlot(_ctx.$slots, "prepend")])) : createCommentVNode("", true), createVNode("div", _hoisted_4$6, [createVNode("input", {
     type: _ctx.type,
     id: _ctx.uid,
     placeholder: _ctx.placeholder,
     readonly: _ctx.readonly,
     onInput: _cache[1] || (_cache[1] = $event => _ctx.onInput($event.target.value)),
     value: _ctx.modelValue,
-    class: ["shadow-sm border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline", {
+    class: ["shadow-sm border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline lx-input", {
       'rounded-l-none': _ctx.hasPrepend,
       'rounded-r-none': _ctx.hasAppend
     }]
-  }, null, 42, ["type", "id", "placeholder", "readonly", "value"]), _ctx.hasAppend ? (openBlock(), createBlock("div", _hoisted_4$6, [renderSlot(_ctx.$slots, "append")])) : createCommentVNode("", true)])]);
-});
+  }, null, 42, ["type", "id", "placeholder", "readonly", "value"]), _ctx.clearButton ? (openBlock(), createBlock("div", _hoisted_5$5, [createVNode("span", {
+    onClick: _cache[2] || (_cache[2] = (...args) => _ctx.onClearClick && _ctx.onClearClick(...args))
+  }, "×")])) : createCommentVNode("", true)]), _ctx.hasAppend ? (openBlock(), createBlock("div", _hoisted_6$5, [renderSlot(_ctx.$slots, "append")])) : createCommentVNode("", true)])]);
+}
 
 script$a.render = render$a;
-script$a.__scopeId = "data-v-496763d2";
 
 var script$9 = defineComponent({
   name: "lxSelectInputCheckmark"
@@ -2100,7 +2109,7 @@ const _hoisted_1 = /*#__PURE__*/createVNode("svg", {
 })], -1);
 
 const _hoisted_2 = {
-  class: "md:w-2/3 sm:w-full rounded-lg shadow-lg bg-white my-3 max-h-screen"
+  class: "md:w-2/3 sm:w-full rounded-lg shadow-lg bg-white my-3 max-h-90screen"
 };
 const _hoisted_3 = {
   class: "flex justify-between border-b border-gray-100 px-5 py-4"
@@ -2123,7 +2132,7 @@ const _hoisted_6 = /*#__PURE__*/createVNode("svg", {
 })], -1);
 
 const _hoisted_7 = {
-  class: "px-10 py-5 text-gray-600"
+  class: "px-10 py-5 text-gray-600 max-h-70screen overflow-auto"
 };
 const _hoisted_8 = {
   class: "px-5 py-4 flex justify-end"
