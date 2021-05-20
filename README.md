@@ -6,8 +6,10 @@ npm i lexx-ui-vue3
 ```
 
 # Version changes
+## 0.5.4
+Update dependencies
 ## 0.5.3
-Restore?
+Restore
 ## 0.5.2
 * Crashed: scoped scss for clear button
 ## 0.5.1
