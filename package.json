@@ -1,6 +1,6 @@
 {
   "name": "lexx-ui-vue3",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "",
   "main": "dist/lexx-ui-vue3.ssr.js",
   "browser": "dist/lexx-ui-vue3.esm.js",
