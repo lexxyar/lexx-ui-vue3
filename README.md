@@ -17,6 +17,9 @@ Or add stylesheets to yore css file
 ```
 
 # Version changes
+## 0.5.6
+* lxSearchHelp now use clear button
+* lxInput clearButton property default value is false
 ## 0.5.5
 * Extracted css styles to separate file (__including tailwindcss__)
 ## 0.5.4

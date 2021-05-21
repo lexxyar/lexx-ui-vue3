@@ -3,7 +3,7 @@ import {defineComponent} from 'vue'
 
 export default defineComponent({
   name: "lxSearchHelp",
-  emits: ['update:modelValue'],
+  emits: ['update:modelValue', 'onclear'],
   props: {
     modelValue: String,
     readonly: {type: Boolean, default: false},
@@ -15,6 +15,7 @@ export default defineComponent({
     tableContent: Array,
     keyField: {type: String, default: 'id'},
     valueField: {type: String, default: 'name'},
+    clearButton: {type: Boolean, default: false},
   },
   setup() {
 
@@ -52,8 +53,8 @@ export default defineComponent({
       }
     }
   },
-  watch:{
-    tableContent(){
+  watch: {
+    tableContent() {
       this.selectedKey = this.modelValue
       this.value = this.getSelected()
     }
@@ -63,7 +64,9 @@ export default defineComponent({
 
 <template>
   <lx-input :readonly="true" :label="label"
-            :empty-label="emptyLabel" :placeholder="placeholder" v-model="value">
+            :empty-label="emptyLabel" :placeholder="placeholder" v-model="value"
+            :clear-button="clearButton" @onclear="$emit('onclear')"
+  >
     <template #append>
       <div class="text-gray-400 hover:text-gray-500 cursor-pointer" @click="showModal = !showModal">
         <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -78,7 +81,7 @@ export default defineComponent({
     class="lx-modal-closable main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster"
     style="background: rgba(0,0,0,.7);" v-show="showModal" @click="onCancelClick">
     <div class="md:w-2/3 sm:w-full rounded-lg shadow-lg bg-white my-3 max-h-90screen">
-<!--      max-h-screen-->
+      <!--      max-h-screen-->
       <div class="flex justify-between border-b border-gray-100 px-5 py-4">
         <div class="flex">
 

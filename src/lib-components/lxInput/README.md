@@ -13,11 +13,13 @@ tableHeader|Array| |`Yes`|
 tableContent|Array| | |
 keyField|String|`id`| |
 valueField|String|`name`| |
+clearButton|Boolean|`false`| |Show clear button for input
 
 ### Emits
 Emit|Parameter
 ---|---
 update:modelValue|selectedKey
+onclear|
 
 
 ### Header structure

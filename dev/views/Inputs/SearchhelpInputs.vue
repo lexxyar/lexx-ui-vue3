@@ -33,14 +33,17 @@ export default defineComponent({
           resolve()
         }, 2)
       })
+    },
+    onClearClick(){
+      console.log('onClearClick')
     }
   },
   created() {
     this.getData().then(() => {
-      console.log(this.tableContent)
+      // console.log(this.tableContent)
     })
     console.log('no data')
-  }
+  },
 })
 </script>
 
@@ -53,6 +56,8 @@ export default defineComponent({
                     :tableHeader="tableHeader"
                     :tableContent="tableContent"
                     valueField="company"
+                    :clear-button="true"
+                    @onclear="onClearClick"
     ></lx-search-help>
   </lx-card>
 </template>
