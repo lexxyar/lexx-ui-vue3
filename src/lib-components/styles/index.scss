@@ -1,5 +1,9 @@
 @import "tailwind.css";
 
+//@import "node_modules/tailwindcss/base.css";
+//@import "node_modules/tailwindcss/components.css";
+//@import "node_modules/tailwindcss/utilities.css";
+
 @import "buttons";
 
 .sidebar-submenu {
@@ -106,28 +110,30 @@
 }
 
 
-//.lx-input-clear{
-//  &:hover .lx-input-clear-button{
-//    display: flex;
-//  }
-//  .lx-input-clear-button {
-//    display: none;
-//    position: absolute;
-//    width: 24px;
-//    height: 38px;
-//    right: 0;
-//    top: 0;
-//
-//    align-items: center;
-//    justify-content: center;
-//
-//    span {
-//      cursor: pointer;
-//      font-size: 1em;
-//
-//      &:hover {
-//        font-size: 1.3em;
-//      }
-//    }
-//  }
-//}
+
+
+.lx-input-clear{
+  &:hover .lx-input-clear-button{
+    display: flex;
+  }
+  .lx-input-clear-button {
+    display: none;
+    position: absolute;
+    width: 24px;
+    height: 38px;
+    right: 0;
+    top: 0;
+
+    align-items: center;
+    justify-content: center;
+
+    span {
+      cursor: pointer;
+      font-size: 1em;
+
+      &:hover {
+        font-size: 1.3em;
+      }
+    }
+  }
+}

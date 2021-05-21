@@ -5,11 +5,19 @@
 npm i lexx-ui-vue3
 ```
 
+# Using
+```vuejs
+import LexxUIVue3 from "lexx-ui-vue3";
+import 'lexx-ui-vue3/lexx-ui-vue3.css'
+```
+
 # Version changes
+## 0.5.5
+* Extracted css styles to separate file (__including tailwindcss__)
 ## 0.5.4
-Update dependencies
+* Update dependencies
 ## 0.5.3
-Restore
+* Restore
 ## 0.5.2
 * Crashed: scoped scss for clear button
 ## 0.5.1

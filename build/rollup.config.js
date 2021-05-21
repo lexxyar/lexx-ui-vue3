@@ -10,9 +10,8 @@ import babel from '@rollup/plugin-babel';
 import PostCSS from 'rollup-plugin-postcss';
 import {terser} from 'rollup-plugin-terser';
 import minimist from 'minimist';
-import scss from 'rollup-plugin-scss';
-// import typescript from 'rollup-plugin-typescript2';
-import copy from 'rollup-plugin-copy'
+import copy from 'rollup-plugin-copy';
+import styles from "rollup-plugin-styles";
 
 // Get browserslist config and remove ie from es build targets
 const esbrowserslist = fs.readFileSync('./.browserslistrc')
@@ -55,7 +54,6 @@ const baseConfig = {
           generateScopedName: '[local]___[hash:base64:5]',
         },
         include: /&module=.*\.css$/,
-        // use: [['sass', {includePaths: ['./src/lib-components/styles', './node_modules']}]]
       }),
       // Process all `<style>` blocks except `<style module>`.
       PostCSS({include: /(?<!&module=.*)\.css$/}),
@@ -65,11 +63,10 @@ const baseConfig = {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue'],
       babelHelpers: 'bundled',
     },
-    scss: {
-      output: 'dist/lexx-ui-vue3.css',
-      // processor: css => postcss([autoprefixer({ overrideBrowserslist: "Edge 18" })]),
-    },
     typescript: {},
+    styles: {
+      mode: ["extract", 'lexx-ui-vue3.css'],
+    },
     copy: {
       targets: [
         {src: 'LexxUIVue3.d.ts', dest: 'dist/'},
@@ -84,7 +81,7 @@ const external = [
   // list external dependencies, exactly the way it is written in the import statement.
   // eg. 'jquery'
   'vue',
-  'vue3-click-away',
+  // 'vue3-click-away',
 ];
 
 // UMD/IIFE shared settings: output.globals
@@ -99,14 +96,15 @@ const globals = {
 const buildFormats = [];
 if (!argv.format || argv.format === 'es') {
   const esConfig = {
-    ...baseConfig,
+     ...baseConfig,
     input: 'src/entry.esm.ts',
-    external,
+     external,
     output: {
       file: 'dist/lexx-ui-vue3.esm.js',
       format: 'esm',
       exports: 'named',
       sourcemap: true,
+      assetFileNames: '[name][extname]',
     },
     plugins: [
       replace(baseConfig.plugins.replace),
@@ -125,8 +123,7 @@ if (!argv.format || argv.format === 'es') {
         ],
       }),
       commonjs(),
-      scss(baseConfig.plugins.scss),
-      // typescript(baseConfig.plugins.typescript),
+      styles(baseConfig.plugins.styles),
       copy(baseConfig.plugins.copy),
     ],
   };
@@ -135,8 +132,8 @@ if (!argv.format || argv.format === 'es') {
 
 if (!argv.format || argv.format === 'cjs') {
   const umdConfig = {
-    ...baseConfig,
-    external,
+     ...baseConfig,
+     external,
     output: {
       compact: true,
       file: 'dist/lexx-ui-vue3.ssr.js',
@@ -145,6 +142,7 @@ if (!argv.format || argv.format === 'cjs') {
       exports: 'auto',
       globals,
       sourcemap: true,
+      assetFileNames: '[name][extname]',
     },
     plugins: [
       replace(baseConfig.plugins.replace),
@@ -153,8 +151,7 @@ if (!argv.format || argv.format === 'cjs') {
       ...baseConfig.plugins.postVue,
       babel(baseConfig.plugins.babel),
       commonjs(),
-      scss(baseConfig.plugins.scss),
-      // typescript(baseConfig.plugins.typescript),
+      styles(baseConfig.plugins.styles),
       copy(baseConfig.plugins.copy),
     ],
   };
@@ -173,6 +170,7 @@ if (!argv.format || argv.format === 'iife') {
       exports: 'auto',
       globals,
       sourcemap: true,
+      assetFileNames: '[name][extname]',
     },
     plugins: [
       replace(baseConfig.plugins.replace),
@@ -186,8 +184,7 @@ if (!argv.format || argv.format === 'iife') {
           ecma: 5,
         },
       }),
-      scss(baseConfig.plugins.scss),
-      // typescript(baseConfig.plugins.typescript),
+      styles(baseConfig.plugins.styles),
       copy(baseConfig.plugins.copy),
     ],
   };

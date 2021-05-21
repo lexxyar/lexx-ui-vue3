@@ -140,30 +140,7 @@ export default defineComponent({
   </div>
 </template>
 
-<style scoped>
-.lx-input-clear:hover .lx-input-clear-button {
-  display: flex;
-}
+<style scoped lang="css">
 
-.lx-input-clear .lx-input-clear-button {
-  display: none;
-  position: absolute;
-  width: 24px;
-  height: 38px;
-  right: 0;
-  top: 0;
-
-  align-items: center;
-  justify-content: center;
-}
-
-.lx-input-clear .lx-input-clear-button span {
-  cursor: pointer;
-  font-size: 1em;
-}
-
-.lx-input-clear .lx-input-clear-button span:hover {
-  font-size: 1.3em;
-}
 
 </style>
