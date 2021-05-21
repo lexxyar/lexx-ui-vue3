@@ -6,9 +6,14 @@ npm i lexx-ui-vue3
 ```
 
 # Using
-```vuejs
+```js
 import LexxUIVue3 from "lexx-ui-vue3";
-import 'lexx-ui-vue3/lexx-ui-vue3.css'
+import 'lexx-ui-vue3/lexx-ui-vue3.css';
+```
+
+Or add stylesheets to yore css file
+```css
+@import '~lexx-ui-vue3/lexx-ui-vue3.css';
 ```
 
 # Version changes

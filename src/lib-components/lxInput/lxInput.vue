@@ -8,7 +8,7 @@ export default defineComponent({
   props: {
     modelValue: String,
     readonly: {type: Boolean, default: false},
-    clearButton: {type: Boolean, default: true},
+    clearButton: {type: Boolean, default: false},
     commitTimout: {
       type: Number,
       default: 0
@@ -139,8 +139,3 @@ export default defineComponent({
 
   </div>
 </template>
-
-<style scoped lang="css">
-
-
-</style>
